@@ -1,0 +1,66 @@
+body,html{
+    height: 100vh;
+    margin: 0;
+}
+.bg{
+    background-image: url('https://images.unsplash.com/photo-1575773462156-bc243c6d3adf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;}
+
+.card-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.signup{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75vw;
+    border-radius: 10px;
+    padding: 5vmax;
+    text-align: center;
+    background: rgba(255, 255, 255, .6);
+	-webkit-backdrop-filter: blur(7px);
+	backdrop-filter: blur(7px);
+}
+
+.signup-btn{
+    margin: 0.5em;
+    padding: 0.1em;
+    border-radius: 25px;
+    border: 3px solid #0d6efd;
+    font-weight: 500;
+}
+#author-btn:hover{
+    border: 2px solid #0d6efd;
+    color: #fff;
+    background-color: #0d6efd;
+}
+#customer-btn:hover{
+    border: 3px solid #0d6efd;
+    color: #0d6efd;
+    background-color: rgba(255, 255, 255, .3);
+}
+
+
+@media (min-width: 768px) {
+    h5,h6{
+        font-size: 4em;
+    }
+    h6{
+        color: #555555;
+    }
+    .signup-btn{
+        font-size: 2em;
+        margin: 1em;
+        padding: 1em;
+    }
+}
+    
