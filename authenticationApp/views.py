@@ -24,7 +24,7 @@ def donor_signup(request):
             user = authenticate(username=user.username, password=unhashed_password)
             login(request, user)
             subject = 'Welcome to the CHARITY APP!'
-            message = f'Hi {user.first_name},\nThe Bookstore would like to officially welcome you to our growing community. Browse the selection of books and find out all your reading tastes, see what you would like to purchase, and place your order.\nRemember to enjoy the app!\n\nKind Regards,\nThe Bookstore Management.'
+            message = f'Hi {user.first_name},\nThe Charity app would like to officially welcome you to our growing community.\nRemember to enjoy the app!\n\nKind Regards,\nThe Charity App Management.'
             email_from = settings.EMAIL_HOST_USER
             recepient_list = [user.email,]
             # send_mail(subject,message,email_from,recepient_list)
@@ -48,7 +48,7 @@ def ngo_signup(request):
             user = authenticate(username=user.username, password=unhashed_password)
             login(request, user)
             subject = 'Welcome to the BOOKSTORE!'
-            message = f'Hi {user.first_name},\nThe Bookstore would like to officially welcome you to our growing author community. Upload your books and have users browse the selection of books, view your uploaded book, and place their order.\nRemember to enjoy the app!\n\nKind Regards,\nThe Bookstore Management.'
+            message = f'Hi {user.first_name},\nThe Charity would like to officially welcome you to our growing  community.\nRemember to enjoy the app!\n\nKind Regards,\nThe Charity App Management.'
             email_from = settings.EMAIL_HOST_USER
             recepient_list = [user.email,]
             # send_mail(subject,message,email_from,recepient_list)
@@ -58,5 +58,5 @@ def ngo_signup(request):
     else:
         form= NgoSignUp()
 
-    title = 'Author Sign Up'
+    title = 'ngo Sign Up'
     return render(request,'registration/signup_form.html',{'title': title,'form':form})

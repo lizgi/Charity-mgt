@@ -26,17 +26,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'SECRET_KEY'
+SECRET_KEY = '568jhhjfdftyuidfghjkjh'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -65,7 +66,7 @@ ROOT_URLCONF = 'charproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [Path(BASE_DIR,"templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,9 +103,9 @@ EMAIL_HOST_USER='timohmugendi@gmail.com'
 EMAIL_HOST_PASSWORD=''
 
 cloudinary.config(
-   cloud_name =config('CLOUD_NAME'),
-    api_key=config('CLOUD_API_KEY'), 
-    api_secret=config('API_SECRET'),
+    cloud_name='dq4bcn8d2',
+    api_key='941563347348349', 
+    api_secret='7lOtGNkeYJ_zKGF92-O1hWxcY-k',
 )
 
 
@@ -153,7 +154,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = 'application.User'
+AUTH_USER_MODEL = 'authenticationApp.User'
 
 LOGIN_URL = 'login'
 
