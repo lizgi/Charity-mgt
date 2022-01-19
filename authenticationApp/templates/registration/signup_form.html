@@ -1,0 +1,32 @@
+{%extends 'registration/base.html'%}
+{% load crispy_forms_tags %}
+{%load static%}
+{% block styles %}
+{{block.super}}
+<link rel="stylesheet" href="{% static 'css/signup_form.css' %}">
+{% endblock %}
+
+{%block content%}
+<div class="bg">
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 card-column">
+                <div class="card signup">
+                    <div class="card-body">
+                      <h5 class="card-title text-center">Sign Up</h5>
+                      <form method="POST" class="form-group">
+                        <div class="form-group"></div>
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <button type="submit" class="btn btn-success signup-btn">Sign Up</button>
+                    </form>    
+                    </div>
+                  </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    </div>
+
+{%endblock%}
