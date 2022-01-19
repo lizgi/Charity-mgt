@@ -8,3 +8,6 @@ from django.contrib.auth.models import AbstractUser
 class User(AbstractUser):
     is_donor = models.BooleanField(default=False)
     is_ngo = models.BooleanField(default=False)
+    
+class Donors(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
