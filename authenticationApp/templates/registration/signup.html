@@ -1,0 +1,27 @@
+{%extends 'registration/base.html'%}
+{%load static%}
+{% block styles %}
+{{block.super}}
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="bg">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 card-column">
+                <div class="card signup">
+                    <div class="card-body">
+                        <h5 class="card-title">Welcome to the charity service</h5>
+                        <h6 class="card-subtitle mb-2 ">Sign Up for an Account</h6>
+                        <a class="btn btn-primary signup-btn" id="customer-btn" href="{%url 'customer_signup'%}" role="button">Donors Sign Up</a>
+                        <a class="btn btn-outline-primary  signup-btn" id="author-btn" href="{%url 'author_signup'%}" role="button">NGO Sign Up</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-2"></div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}
