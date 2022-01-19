@@ -6,5 +6,5 @@ from django.contrib.auth.models import AbstractUser
 
 #create custoclass User(AbstractUser):
 class User(AbstractUser):
-    is_customer = models.BooleanField(default=False)
-    is_author = models.BooleanField(default=False)
+    is_donor = models.BooleanField(default=False)
+    is_ngo = models.BooleanField(default=False)
