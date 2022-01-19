@@ -13,3 +13,15 @@ class DonorSignUp(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
         fields=['first_name','last_name','username','email','password1','password2']
+        
+        
+    @transaction.atomic
+    def save(self):
+        user = super().save(commit=False)
+        user.is_ngo=True
+        user.save()
+        author = Ngo.objects.create(user=user)
+        author.first_name = self.cleaned_data.get('first_name')
+        author.last_name = self.cleaned_data.get('last_name')
+        author.email = self.cleaned_data.get('email')
+        return user
