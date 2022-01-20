@@ -1,7 +1,8 @@
-from . import views
+
 from django.urls import path
+from .views import Index
+from . import views
 
-
-urlpatterns = [ 
-    path('', views.donation)
+urlpatterns = [
+    path('', Index, name='index'),
 ]
