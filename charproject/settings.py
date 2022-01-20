@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'charapp',
     'bootstrap4',
+    'crispy_forms',
     
 ]
 

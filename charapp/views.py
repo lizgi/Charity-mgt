@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import NGO_form , donation_form
+from .forms import  donation_form
 
 
 # Create your views here.
@@ -12,4 +12,4 @@ def donation(request):
     else:
         form = donation_form()
 
-    return render(request, "CharitySystem/request_form.html",{'form':form})
+    return render(request, "request_form.html",{'form':form})
