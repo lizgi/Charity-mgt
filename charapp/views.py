@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from .forms import  donation_form,NGO_form
 
 # Create your views here.
+def Index(request):
+    return render(request,'index.html')
+    
 def donation(request):
     if request.method == 'POST':
         form = donation_form(request.POST, request.FILES)
