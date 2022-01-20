@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  {% if title %}
+  <title>Charity mgt - {{title}}</title>
+  {% else %}
+    <title> Charity mgt  </title>
+  {% endif %}
+
+  {% block styles %}
+  
+  {% load static %}
+  {% load bootstrap4%}
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link type="text/css" href="{% static 'img' %}">
+  <link type="text/css" rel="stylesheet" href="{% static 'font-aws/all.css'%}">
+  <link type="text/css" rel="stylesheet" href="{% static 'css/nav.css'%}">
+  <link type="text/css" rel="stylesheet" href="{% static 'css/payment.css'%}">
+  <link type="text/css" rel="stylesheet" href="{% static 'img' %}">
+  {% endblock %}
+  
+</head>
+<body>
+    {% include "navbar.html" %}
+    {% block content %} 
+    {%endblock%}
+    {% include "footer.html" %}
+
+
+    {% block scripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     
+    
+    {% endblock %}
+</body>
+</html>
