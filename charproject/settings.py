@@ -45,8 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'charapp',
     'bootstrap4',
-    'crispy_forms'
-    
+    'crispy_forms'  
 ]
 
 MIDDLEWARE = [
@@ -100,7 +99,6 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 #     api_key=config('CLOUD_API_KEY'), 
 #     api_secret=config('API_SECRET'),
 # )
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
