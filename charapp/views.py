@@ -14,3 +14,7 @@ def ngo(request):
         form = NGO_form()
 
     return render(request,"verify.html",{'form':form})
+
+
+def gallery(request):
+    return render(request, 'gallery.html')

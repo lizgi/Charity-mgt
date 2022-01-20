@@ -3,5 +3,6 @@ from . import views
 
 
 urlpatterns = [ 
-    path('', views.ngo)
+    path('ngo', views.ngo),
+    path('gallery', views.gallery)
 ]
