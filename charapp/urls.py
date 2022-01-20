@@ -3,5 +3,10 @@ from . import views
 
 
 urlpatterns = [ 
-    path('', views.ngo)
+    path('ngo/', views.ngo)
+from .views import Index
+from . import views
+
+urlpatterns = [
+    path('', Index, name='index'),
 ]
