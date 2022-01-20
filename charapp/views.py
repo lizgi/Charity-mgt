@@ -13,3 +13,7 @@ def donation(request):
         form = donation_form()
 
     return render(request, "request_form.html",{'form':form})
+
+
+def blog(request):
+    return render(request, 'blog.html')
