@@ -39,4 +39,6 @@ def ngo(request):
 def gallery(request):
     return render(request, 'gallery.html')
 
-
+#Contact us function
+def Contact(request):
+    return render(request,'contact_us.html')
