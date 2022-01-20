@@ -12,10 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-from decouple import config,Csv
+# import cloudinary
+# import cloudinary.uploader
+# import cloudinary.api
+# from decouple import config,Csv
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -102,11 +102,11 @@ EMAIL_PORT=587
 EMAIL_HOST_USER='timohmugendi@gmail.com'
 EMAIL_HOST_PASSWORD=''
 
-cloudinary.config(
-    cloud_name='dq4bcn8d2',
-    api_key='941563347348349', 
-    api_secret='7lOtGNkeYJ_zKGF92-O1hWxcY-k',
-)
+# cloudinary.config(
+#     cloud_name='dq4bcn8d2',
+#     api_key='941563347348349', 
+#     api_secret='7lOtGNkeYJ_zKGF92-O1hWxcY-k',
+# )
 
 
 # Password validation
