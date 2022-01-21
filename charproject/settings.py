@@ -16,19 +16,25 @@ from pathlib import Path
 # import cloudinary.uploader
 # import cloudinary.api
 # from decouple import config,Csv
-import dj_database_url
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+# import dj_database_url
+
+
+# # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
+# # Quick-start development settings - unsuitable for production
+# # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '568jhhjfdftyuidfghjkjh'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+
+# # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'SECRET_KEY'
+
+
+# # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -48,7 +54,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'authenticationApp',
-    
 ]
 
 MIDDLEWARE = [
@@ -85,29 +90,24 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'twoway',
-        'USER': 'moringa',
-    'PASSWORD':'12345',
-    }
-}
-#Email Configuration
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_USE_TLS=True
-EMAIL_HOST='smtp.gmail.com'
-EMAIL_PORT=587
-EMAIL_HOST_USER='timohmugendi@gmail.com'
-EMAIL_HOST_PASSWORD=''
+# DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#            'NAME': config('DB_NAME'),
+#            'USER': config('DB_USER'),
+#            'PASSWORD': config('DB_PASSWORD'),
+#            'HOST': config('DB_HOST'),
+#            'PORT': '',
+#        }
+       
+#    }
 
 # cloudinary.config(
-#     cloud_name='dq4bcn8d2',
-#     api_key='941563347348349', 
-#     api_secret='7lOtGNkeYJ_zKGF92-O1hWxcY-k',
+#    cloud_name =config('CLOUD_NAME'),
+#     api_key=config('CLOUD_API_KEY'), 
+#     api_secret=config('API_SECRET'),
 # )
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
