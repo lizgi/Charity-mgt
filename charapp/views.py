@@ -1,7 +1,16 @@
-from django.shortcuts import render, redirect
+
+from django.shortcuts import render, redirect,HttpResponse
 from .forms import  donation_form,NGO_form
+from django.contrib.auth import authenticate, login, logout
+from .models import *
+from . import *
+from datetime import date
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+def Index(request):
+    return render(request, 'index.html')
+  
 def donation(request):
     if request.method == 'POST':
         form = donation_form(request.POST, request.FILES)
@@ -29,4 +38,5 @@ def ngo(request):
 
 def gallery(request):
     return render(request, 'gallery.html')
+
 
