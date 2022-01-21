@@ -16,7 +16,10 @@ from pathlib import Path
 # import cloudinary.uploader
 # import cloudinary.api
 # from decouple import config,Csv
+
+
 # import dj_database_url
+
 
 # # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,8 +28,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # # Quick-start development settings - unsuitable for production
 # # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
+
+
 # # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'SECRET_KEY'
+
 
 # # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,6 +43,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,8 +51,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'charapp',
+    'crispy_forms',
     'bootstrap4',
-    'crispy_forms'  
+    'authenticationApp',
 ]
 
 MIDDLEWARE = [
@@ -81,6 +89,7 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+
 
 # DATABASES = {
 #        'default': {
@@ -145,3 +154,13 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTH_USER_MODEL = 'authenticationApp.User'
+
+LOGIN_URL = 'login'
+
+LOGOUT_URL = 'logout'
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
