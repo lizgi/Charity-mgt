@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import  donation_form
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .forms import  UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
@@ -44,4 +44,4 @@ def profile(request):
         'p_form': p_form
     }
 
-    return render(request, 'users/profile.html', context)
+    return render(request, 'profile.html', context)
