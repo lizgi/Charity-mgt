@@ -252,11 +252,16 @@ header {
   width: 100%;
   z-index: 99; }
   header .logo {
-    padding-top: 6px; }
+    padding-top: 6px;
+    padding-bottom: -25px;
+
+  } 
   header .header-top {
     background-color: #fff;
     border-bottom: 1px solid #d3d7cea6;
-    padding: 7px; }
+    padding: 7px;
+    
+  }
     header .header-top .col-det .ulleft li {
       float: left;
       padding: 12px;
@@ -293,6 +298,17 @@ header {
   header .header-bottom {
     padding: 6px;
     background-color: #fff; }
+
+  .logo{
+      max-width: 2%;
+      padding: -105px;
+      
+    }
+    .logo img{
+      width: 150%;
+      height: 50%;
+     
+    }
     @media screen and (max-width: 991px) {
       header .header-bottom {
         padding: 0px; } }
@@ -300,7 +316,8 @@ header {
       header .header-bottom img {
         padding: 5px;
         margin-top: 0px;
-        max-width: 230px; } }
+        max-width: 230px; 
+      } }
   header .nav-col .navbad {
     display: block;
     float: right; }
@@ -358,7 +375,17 @@ header {
 
 /* =================== Slider Style Starts Here =================== */
 .slider {
-  position: relative; }
+  margin-top: -100px;
+  height:        700px;
+  min-height:     600px;
+  -ms-overflow-style: none;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; 
+}
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
 
 .slider-captions {
   position: absolute;
@@ -402,11 +429,18 @@ header {
   background: -webkit-linear-gradient(top, rgba(45, 32, 44, 0.3) 0%, rgba(45, 32, 44, 0.1) 100%);
   background: linear-gradient(to bottom, rgba(45, 32, 44, 0.3) 0%, rgba(45, 32, 44, 0.1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc1b2429', endColorstr='#cc1b2429', GradientType=0);
-  position: relative; }
+  position: relative;
+ 
+}
 
 .slider-img img {
   position: relative;
-  z-index: -1; }
+  z-index: -1;
+  height:        700px;
+  min-height:     600px;
+  -ms-overflow-style: none;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden;  }
 
 .slider .owl-nav .owl-prev,
 .slider .owl-nav .owl-next {
@@ -525,10 +559,16 @@ header {
   .events {
     padding: 30px 10px; } }
 .events .event-ro .event-box {
+  max-width: 100%;
+  height: 100%;
   text-align: center;
   margin-bottom: 20px; }
 
 .events .event-ro .event-box img {
+  
+  max-width:  100%;
+  height: 50%;
+  background-size: cover;
   margin-bottom: 20px; }
 
 .events .event-ro .event-box h4 {
@@ -562,7 +602,7 @@ header {
 
 /* ===================================== Charity Number CSS ================================== */
 .doctor-message {
-  background-image: url("../images/slider/slider-2.jpg");
+  background-image: url("../images/miss.jpg");
   background-attachment: fixed;
   background-size: cover; }
   .doctor-message .session-title h2 {
@@ -588,9 +628,23 @@ header {
   color: #FFF; }
 
 /* ===================================== Our Blog CSS ================================== */
+.our-blog .single-blog img {
+  width: 100%;
+
+}
+.our-blog .single-blog {
+  margin: 30px 0px;
+  transition: transform .5s;
+}
+.our-blog .single-blog:hover{
+  transform: translateY(-8px);
+}
+
+
 .our-blog {
   background-color: #FDFDFD;
   padding: 40px; }
+
 
 @media screen and (max-width: 967px) {
   .our-blog {
@@ -620,14 +674,22 @@ header {
   text-indent: 20px; }
 
 .our-blog .single-blog .link a {
-  font-size: 12px;
-  color: #71b61b; }
+  font-size: 14px;
+  color: #FFF;
+}
+.our-blog .single-blog .link a:hover{
+  text-decoration: none;
+}
 
+  
+.link button{
+  background-color: blue;
+
+}
 .our-blog .single-blog .link i {
-  padding-top: 6px;
+  padding-top: 3px;
   margin-left: 5px;
-  color: #FFFFFF; }
-
+  color: #ffffff; }
 /* ===================================== Fooer CSS ================================== */
 .footer {
   padding: 50px;
