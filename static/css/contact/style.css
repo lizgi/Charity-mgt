@@ -1,0 +1,171 @@
+/* Getting the new tags to behave */
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {
+	display:block
+}
+
+.wrapper {
+	width:100%;
+	overflow:hidden
+}
+
+strong {
+	color:#dcd9cf
+}
+.pad_left1 {
+	padding-left:26px
+}
+.pad_left2 {
+	padding-left:36px
+}
+.pad_bot1 {
+	padding-bottom:14px
+}
+.pad_bot2 {
+	padding-bottom:4px
+}
+.marg_right1 {
+	margin-right:37px
+}
+.box1 {
+	background:url(/static/images/contactImages/bg_box1.jpg) top center no-repeat #dad6cc;
+	border-top:5px solid #cdc8bc;
+	padding:15px 30px 29px
+}
+.box1 strong {
+	color:#3f3f3f
+}
+.line1 {
+	background:url(/static/images/contactImages/line_vert1.gif) 289px 0 repeat-y
+}
+.line2 {
+	background:url(/static/images/contactImages/line_vert1.gif) 591px 0 repeat-y
+}
+#page3 .line1 {
+	background-position:282px 0
+}
+.relative {
+	position:relative
+}
+.button1 {
+	float:right;
+	color:#dddad1;
+	text-decoration:none;
+	background:#000;
+	line-height:18px;
+	padding:0 9px;
+	margin-top:2px
+}
+* + html .button1 {
+	margin-top:-20px
+}
+.button1 {
+	color:#dddad1
+}
+.button1:hover {
+	background:#ffb919;
+	color:#fff
+}
+.button1.color2 {
+	color:#dddad1
+}
+.button1.color2:hover {
+	background:#94c932;
+	color:#fff
+}
+.button1.color3 {
+	color:#dddad1
+}
+.button1.color3:hover {
+	background:#63d1a7;
+	color:#fff
+}
+.button2 {
+	display:inline-block;
+	font-size:15px;
+	color:#fff;
+	text-transform:uppercase;
+	text-decoration:none;
+	padding:0 21px;
+	height:36px;
+	line-height:34px;
+	font-weight:400;
+	background:url(/static/images//contactImages/button1_bg.gif) top repeat-x;
+	letter-spacing:-1px
+}
+.button2.color2 {
+	background-image:url(/static/images//contactImages/button2_bg.gif)
+}
+.button2.color3 {
+	background-image:url(/static/images/contactImages/button3_bg.gif)
+}
+.button2:hover {
+	background:#000
+}
+.color0 {
+	color:#616161;
+	text-decoration:none
+}
+.link1 {
+	text-decoration:none
+}
+.link1:hover {
+	text-decoration:underline
+}
+.list1 {
+	margin-top:-2px;
+	margin-bottom:-2px
+}
+.address {
+	float:left;
+	width:80px
+}
+.img1 {
+	position:absolute;
+	right:0;
+	top:32px
+}
+
+/* ============================= forms ============================= */
+#ContactForm {
+	width:585px;
+	overflow:hidden;
+	padding-bottom:36px
+}
+#ContactForm .wrapper {
+	height:26px
+}
+#ContactForm span {
+	float:left;
+	width:105px;
+	line-height:24px
+}
+#ContactForm .textarea_box {
+	width:100%;
+	overflow:hidden;
+	min-height:103px;
+	padding-bottom:5px
+}
+
+#ContactForm a {
+	margin-left:10px;
+	width:72px;
+	text-align:center;
+	float:right
+}
+#ContactForm .input {
+	width:470px;
+	background:rgb(121, 231, 235);
+	padding:3px 5px;
+	color:#575652;
+	font:12px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	height:14px
+}
+#ContactForm textarea {
+	overflow:auto;
+	width:470px;
+	background:rgb(115, 231, 240);
+	padding:3px 5px;
+	color:#575652;
+	font:12px "Trebuchet MS", Arial, Helvetica, sans-serif;
+	height:91px
+}
