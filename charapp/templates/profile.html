@@ -1,9 +1,26 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
+{% load static%}
+
+{% block styles %}
+  
+   
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Shalimar&display=swap" rel="stylesheet"> -->
+
+  {% endblock %}
+
 {% block content %}
-    <div class="content-section">
+
+    <div class="container mb-4">
+        <h1>Donor Profile</h1>
       <div class="media">
-        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <img class="mt-20px rounded-circle account-img" src="{{ user.profile.image.url }}">
         <div class="media-body">
           <h2 class="account-heading">{{ user.username }}</h2>
           <p class="text-secondary">{{ user.email }}</p>

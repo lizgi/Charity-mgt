@@ -22,7 +22,7 @@ def donation(request):
 def blog(request):
     return render(request, 'blog.html')
 
-@login_required
+# @login_required
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
