@@ -1,4 +1,13 @@
-amqp==1.4.9
-anyjson==0.3.3
+anyjson==0.2.5
 asgiref==3.4.1
-
+bootstrap4==0.1.0
+certifi==2021.10.8
+cloudinary==1.28.1
+Django==3.2.11
+django-crispy-forms==1.13.0
+django-currentuser==0.5.3
+pytz==2021.3
+six==1.16.0
+sqlparse==0.4.2
+tzdata==2021.5
+urllib3==1.26.8
