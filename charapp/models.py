@@ -1,6 +1,8 @@
 from distutils.command.upload import upload
 from email.mime import image
 from email.policy import default
+from django.conf import settings
+
 from pyexpat import model
 from tkinter import CASCADE
 from django.db import models
@@ -23,7 +25,7 @@ class donation_request(models.Model):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=CASCADE)
+    user = models.OneToOneField(to=settings.AUTH_USER_MODEL, on_delete=CASCADE)
     image = models.ImageField(default = 'default.jpg', upload_to='profile_pics')
 
     def __str__(self):
