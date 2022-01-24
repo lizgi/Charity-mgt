@@ -12,16 +12,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-# import cloudinary
-# import cloudinary.uploader
-# import cloudinary.api
-# from decouple import config,Csv
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from decouple import config,Csv
+import dj_database_url
 
 
-# import dj_database_url
-
-
-# # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -91,23 +89,20 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-# DATABASES = {
-#        'default': {
-#            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#            'NAME': config('DB_NAME'),
-#            'USER': config('DB_USER'),
-#            'PASSWORD': config('DB_PASSWORD'),
-#            'HOST': config('DB_HOST'),
-#            'PORT': '',
-#        }
-       
-#    }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'group',
+        'USER': 'moringa',
+    'PASSWORD':'12345',
+    }
+}
 
-# cloudinary.config(
-#    cloud_name =config('CLOUD_NAME'),
-#     api_key=config('CLOUD_API_KEY'), 
-#     api_secret=config('API_SECRET'),
-# )
+cloudinary.config(
+   cloud_name =config('CLOUD_NAME'),
+    api_key=config('CLOUD_API_KEY'), 
+    api_secret=config('API_SECRET'),
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -140,6 +135,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+SECURE_SSL_REDIRECT = False
 
 
 # Static files (CSS, JavaScript, Images)

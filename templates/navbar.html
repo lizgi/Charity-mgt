@@ -1,0 +1,60 @@
+<header class="continer-fluid ">
+    <div  class="header-top">
+        <div class="container">
+            <div class="row col-det">
+            
+            
+                <div class="col-lg-3 d-none d-md-block col-md-6 btn-bhed">
+                    <button class="btn btn-sm btn-success">Join Us</button>
+                    <button class="btn btn-sm btn-default">Donate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="menu-jk" class="header-bottom">
+        <div class="container">
+            <div class="row nav-row">
+                <div class="col-lg-3 col-md-12 logo">
+                    <a href="index.html">
+                        <img src="/static/images/nlogo.png" alt="">
+                        <a data-toggle="collapse" data-target="#menu" href="#menu"><i class="fas d-block d-lg-none  small-menu fa-bars"></i></a>
+                    </a>
+
+                </div>
+                <div id="menu" class="col-lg-9 col-md-12 d-none d-lg-block nav-col">
+
+                            <ul class="navbad">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/">Home
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="about">About Us</a>
+                                </li>
+                               
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'gallery' %}">Gallery</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'contactUs' %}">Contact US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'signUp' %}">Sign Up</a>
+                                </li>
+
+
+
+
+
+                            </ul>
+
+
+                </div>
+            </div>
+        </div>
+    </div> 
+</header>
