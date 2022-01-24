@@ -28,13 +28,13 @@ class DonorSignUp(UserCreationForm):
     
     
 class NgoSignUp(UserCreationForm):
-    first_name= forms.CharField(label='First Name' ,error_messages={'required': 'Please enter your first name'})
-    last_name= forms.CharField(label='Last Name',error_messages={'required': 'Please enter your last name'})
+    organization_name= forms.CharField(label='Name of organization' ,error_messages={'required': 'Please enter your first name'})
+    phone_number= forms.IntegerField(label='Phone number',error_messages={'required': 'Please enter your last name'})
     email= forms.EmailField(label='Email Address' ,help_text='Format: 123@gmail.com, 456@yahoo.com',error_messages={'required': 'Please enter your email address'})
 
     class Meta(UserCreationForm.Meta):
         model = User
-        fields=['first_name','last_name','username','email','password1','password2']
+        fields=['organization_name','phone_number','email','password1','password2']
 
         
     @transaction.atomic
