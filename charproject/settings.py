@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'authenticationApp',
+    'django-currentuser',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'charproject.urls'
