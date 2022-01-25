@@ -13,6 +13,12 @@ urlpatterns = [
     path('gallery/', views.gallery, name='gallery'),
     path('contact/', views.Contact, name='contactUs'),
 
+
+    path('about/', views.about, name='about'),
+
+    path('requests/', RequestList.as_view()),
+
+
 ]
 
     
