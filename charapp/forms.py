@@ -13,7 +13,7 @@ from django import forms
 class donation_form(forms.ModelForm):
     class Meta:
         model = donation_request
-        fields = ('donation_description','donation_amount')
+        fields = ('ngo_name', 'donation_description','donation_amount', 'Request_for_donation',)
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
@@ -38,5 +38,5 @@ class ProfileUpdateForm(forms.ModelForm):
 class NGO_form(forms.ModelForm):
     class Meta:
         model = NGO
-        fields = ('ngo_name','head_of_ngo','contactNo','email')
+        fields = ('ngo_name','Amount',  'head_of_ngo','contactNo','email',)
 

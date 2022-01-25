@@ -72,3 +72,10 @@ def gallery(request):
 #Contact us function
 def Contact(request):
     return render(request,'contact_us.html')
+
+def not_verified(request):
+    return render(request, "not_verified.html")
+
+def verify_from_admin(request):
+    data = NGO.objects.all()
+    return render(request, "verify_from_admin.html", {'ngo':data})
