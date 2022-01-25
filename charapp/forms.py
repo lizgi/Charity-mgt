@@ -13,7 +13,7 @@ from django import forms
 class donation_form(forms.ModelForm):
     class Meta:
         model = donation_request
-        fields = ('donation_description','donation_amount', 'donation_category')
+        fields = ('donation_description','donation_amount')
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()

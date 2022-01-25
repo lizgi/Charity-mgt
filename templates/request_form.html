@@ -6,8 +6,7 @@
     <form method="POST">
         {% csrf_token %}
         {{form|crispy}}
-        <form action="/action_page.php mt-4">
-            <label for="cars" class="mt-4 " >Choose Category:</label>
+            <label for="Category" class="mt-4 " >Choose Category:</label>
             <select name="Category">
                 <option value="select">Select...</option>
               <option value="Child">Child education</option>
@@ -15,7 +14,6 @@
               <option value="Vulnurable">Vulnurable Groups</option>
             </select>
             <br><br>
-          </form>
         <button class="btn btn-outline-info p-2 mt-3" type="submit">Post Request</button>
     </form>
 </div>
