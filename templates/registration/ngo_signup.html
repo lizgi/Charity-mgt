@@ -1,4 +1,4 @@
- {% extends "registration/base.html" %} 
+{% extends "registration/base.html" %} 
 
   
 
@@ -38,7 +38,7 @@
 			width: 350px;
 			margin-top: auto;
 			margin-bottom: auto;
-			background-color: rgba(255,255,255,0.06);
+			background-color: rgba(255,255,255,0.1);
 			position: relative;
 			display: flex;
 			justify-content: center;
@@ -81,8 +81,6 @@
 			box-shadow: none !important;
 			outline: 0px !important;
 		}
-
-
         /* styling using glassmorphism */
         .glass-panel {
   color: #fff;
@@ -172,18 +170,18 @@ p {
 
 					<form method="POST" action="">
 						{% csrf_token %}
+
                         <div class="input-group mb-3">
 
-							{{form.first_name}}
+                            {{form.organization_name}}
 						</div>
                         <div class="input-group mb-3">
 
-							
-                            {{form.last_name}}
+							{{form.username}}
 						</div>
 						<div class="input-group mb-3">
 
-							{{form.username}}
+							{{form.phone_number}}
 						</div>
 						<div class="input-group mb-2">
 
@@ -225,9 +223,9 @@ p {
 
 		//Query All input fields
 		var form_fields = document.getElementsByTagName('input')
-        form_fields[1].placeholder='firstname..';
-        form_fields[2].placeholder='lastname';
-		form_fields[3].placeholder='Username..';
+        form_fields[1].placeholder='organization name..';
+        form_fields[2].placeholder='username';
+		form_fields[3].placeholder='phone number..';
 		form_fields[4].placeholder='Email..';
 		form_fields[5].placeholder='Enter password...';
 		form_fields[6].placeholder='Re-enter Password...';

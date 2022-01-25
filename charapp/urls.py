@@ -11,7 +11,6 @@ urlpatterns = [
     path('ngo/', views.ngo),
     path('gallery/', views.gallery, name='gallery'),
     path('contact/', views.Contact, name='contactUs'),
-
 ]
 
     

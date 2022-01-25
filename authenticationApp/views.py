@@ -32,7 +32,7 @@ def donor_signup(request):
             # send_mail(subject,message,email_from,recepient_list)
             messages.success(request, 'Account created successfully! Check your email for a welcome mail.')
 
-            return redirect('login/')
+            return redirect('/login')
     else:
         form= DonorSignUp()
 
@@ -61,7 +61,7 @@ def ngo_signup(request):
         form= NgoSignUp()
 
     title = 'ngo Sign Up'
-    return render(request,'registration/signup_form.html',{'title': title,'form':form})
+    return render(request,'registration/ngo_signup.html',{'title': title,'form':form})
 
 
 def register_request(request):
