@@ -12,11 +12,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-# import cloudinary
-# import cloudinary.uploader
-# import cloudinary.api
-# from decouple import config,Csv
-# import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from decouple import config,Csv
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -35,7 +35,7 @@ SECRET_KEY = 'SECRET_KEY'
 # # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -96,17 +96,21 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'twoway',
-        'USER': 'moringa',
+
+
+        'NAME': 'chariti',
+        'USER': 'access',
+
     'PASSWORD':'12345',
     }
 }
 
-# cloudinary.config(
-#    cloud_name =config('CLOUD_NAME'),
-#     api_key=config('CLOUD_API_KEY'), 
-#     api_secret=config('API_SECRET'),
-# )
+
+cloudinary.config(
+    cloud_name =config('CLOUD_NAME'),
+    api_key=config('CLOUD_API_KEY'), 
+    api_secret=config('API_SECRET'),
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -150,6 +154,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
