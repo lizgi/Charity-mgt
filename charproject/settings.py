@@ -35,7 +35,7 @@ SECRET_KEY = 'SECRET_KEY'
 # # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -87,7 +87,6 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 
 
 

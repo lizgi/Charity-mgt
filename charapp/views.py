@@ -70,12 +70,7 @@ def gallery(request):
 def Contact(request):
     return render(request,'contact_us.html')
 
+def about(request):
+    return render(request,'about.html')
 
-class RequestList(ListView):
 
-    context_object_name = 'requests'
-    queryset = donation_request.objects.filter(admin_approved=True)
-    template_name = 'request_list.html'
-
-    
-    
