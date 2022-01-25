@@ -12,11 +12,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
-# import cloudinary
-# import cloudinary.uploader
-# import cloudinary.api
-# from decouple import config,Csv
-# import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from decouple import config,Csv
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'authenticationApp',
+    
 ]
 
 MIDDLEWARE = [
@@ -62,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    
 ]
 
 ROOT_URLCONF = 'charproject.urls'
@@ -77,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -92,18 +96,21 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+
+
         'NAME': 'chariti',
         'USER': 'access',
+
     'PASSWORD':'12345',
     }
 }
 
 
-# cloudinary.config(
-#    cloud_name =config('CLOUD_NAME'),
-#     api_key=config('CLOUD_API_KEY'), 
-#     api_secret=config('API_SECRET'),
-# )
+cloudinary.config(
+    cloud_name =config('CLOUD_NAME'),
+    api_key=config('CLOUD_API_KEY'), 
+    api_secret=config('API_SECRET'),
+)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
