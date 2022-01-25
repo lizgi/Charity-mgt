@@ -33,10 +33,9 @@ SECRET_KEY = 'SECRET_KEY'
 
 
 # # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
 
 
 # Application definition
@@ -53,7 +52,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'authenticationApp',
-    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -91,14 +89,14 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'group',
-#         'USER': 'moringa',
-#     'PASSWORD':'12345',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'kingdo',
+        'USER': 'access',
+    'PASSWORD':'12345',
+    }
+}
 
 # cloudinary.config(
 #    cloud_name =config('CLOUD_NAME'),
@@ -123,14 +121,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'profile',
-        'USER': 'access',
-    'PASSWORD':'12345',
-    }
-}
 
 
 # Internationalization
@@ -156,9 +146,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL ='/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
