@@ -2,7 +2,7 @@
 
 from . import views
 from django.urls import path
-from .views import Index
+from .views import Index, RequestList
 
 urlpatterns = [
     path('', Index, name='index'),
@@ -13,6 +13,7 @@ urlpatterns = [
     path('contact/', views.Contact, name='contactUs'),
     path('about/', views.about, name='about'),
 
+    path('requests/', RequestList.as_view()),
 
 ]
 
