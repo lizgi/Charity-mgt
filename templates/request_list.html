@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Publishers</h2>
+    <ul>
+        {% for request in requests %}
+            <li>{{ request.description }}</li>
+            <li>{{ request.amount }}</li>
+
+        {% endfor %}
+    </ul>
+{% endblock %}
