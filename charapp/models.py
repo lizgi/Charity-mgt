@@ -15,9 +15,9 @@ from PIL import Image
 
 class donation_request(models.Model):
 
-    donation_description = models.TextField(blank=True,default=None)
+    donation_description = models.TextField(blank=True,default=0)
     donation_amount = models.CharField(default=None,blank=True,max_length=15)
-    donation_request_user = models.CharField(blank=True,default=get_current_authenticated_user,max_length=30)
+    donation_request_user = models.CharField(blank=True,default=0,max_length=30)
 
     def __str__(self):
         return self.donation_amount
@@ -52,3 +52,18 @@ class NGO(models.Model):
     def __str__(self):
         return self.ngo_name
 
+class donation_request_view(models.Model):
+    ngo_name = models.CharField(default=None,max_length=50,blank=False,primary_key=True)
+    domain = models.CharField(default=None,max_length=50,blank=False)
+    head_of_ngo = models.CharField(default=None,max_length=50,blank=False)
+    contactNo = models.CharField(default=None,max_length=10,blank=False)
+    email = models.EmailField(blank=False,default=None)
+    donation_description = models.TextField(default=None,blank=False)
+    donation_amount = models.CharField(default=None,max_length=10,blank=False)
+
+    def __str__(self):
+        return self.ngo_name
+
+    class Meta:
+        managed = False
+        db_table = 'post_request'    

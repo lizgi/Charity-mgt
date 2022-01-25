@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import  donation_form
 from .forms import  UserUpdateForm, ProfileUpdateForm
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 
@@ -21,7 +21,7 @@ def donation(request):
     if request.method == 'POST':
         form = donation_form(request.POST, request.FILES)
         if form.is_valid():
-            # form.save()
+            form.save()
             return redirect('/')
     else:
         form = donation_form()
@@ -31,7 +31,7 @@ def donation(request):
 def blog(request):
     return render(request, 'blog.html')
 
-@login_required
+# @login_required
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
