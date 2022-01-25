@@ -1,21 +1,16 @@
-
+from django.contrib import messages,admin
+from django.utils.translation import ngettext
+from .models import donation_request,Profile
+from .models import NGO, donation_request , donation_request_view
 
 
 
 # Register your models here.
 admin.site.register(Profile)
 admin.site.register(NGO)
-
 admin.site.register(donation_request)
-
 admin.site.register(donation_request_view)
 
-from django.contrib import messages,admin
-from django.utils.translation import ngettext
-from .models import donation_request,Profile
-from .models import NGO, donation_request , donation_request_view
-
-admin.site.register(donation_request, DonationAdmin,Profile)
 
 # Register your models here.
 class DonationAdmin(admin.ModelAdmin):

@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'authenticationApp',
+    'tkinter',
     
 ]
 
@@ -98,8 +99,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
 
 
-        'NAME': 'chariti',
-        'USER': 'access',
+        'NAME': 'char',
+        'USER': 'moringa',
 
     'PASSWORD':'12345',
     }

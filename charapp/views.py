@@ -24,7 +24,7 @@ def donation(request):
     if request.method == 'POST':
         form = donation_form(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            # form.save()
             return redirect('/')
     else:
         form = donation_form()
