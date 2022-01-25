@@ -6,6 +6,8 @@ from .models import *
 from . import *
 from datetime import date
 from django.contrib.auth.decorators import login_required
+from django.views.generic import ListView
+
 
 # Create your views here.
 def Index(request):
@@ -42,3 +44,13 @@ def gallery(request):
 #Contact us function
 def Contact(request):
     return render(request,'contact_us.html')
+
+
+class RequestList(ListView):
+
+    context_object_name = 'requests'
+    queryset = donation_request.objects.filter(admin_approved=True)
+    template_name = 'request_list.html'
+
+    
+    
