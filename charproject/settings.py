@@ -92,14 +92,7 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'group1',
-        'USER': 'postgres',
-    'PASSWORD':'test',
-    }
-}
+
 
 
 # cloudinary.config(
@@ -140,10 +133,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 4be4c81b58deb98bae39d032de24118c16a16138
 SECURE_SSL_REDIRECT = False
 
 # Static files (CSS, JavaScript, Images)

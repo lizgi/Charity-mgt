@@ -13,11 +13,27 @@ Description: This Template is created for Youtubers
 * {
   margin: 0px;
   padding: 0px;
-  list-style: none; }
+  list-style: none;
+  text-decoration: none;
+  font-family: sans-serif, serif;
+ }
+
+a h1:hover{
+  text-decoration: none !important;
+}
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+  border-radius: 5px;
+  transition: transform .5s;
+ }
 
+  img:hover{
+    opacity: 0.7;
+    transform: translateY(-3px);
+    cursor: pointer;
+
+  }
 a {
   text-decoration: none;
   outline: none;
@@ -80,7 +96,9 @@ p {
   padding: 0px; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #545454; }
+  color: #545454;
+ }
+  
 
 body {
   background-color: #f1f1f145 !important;
@@ -187,10 +205,15 @@ body {
 
 .btn-success {
   background-color: #51be78;
-  border-color: #51be78; }
+  border-color: #51be78;
+
+ }
+
   .btn-success:hover {
     background-color: #51be78 !important;
-    border-color: #51be78 !important; }
+    border-color: #51be78 !important; 
+
+  }
   .btn-success:active {
     background-color: #51be78 !important;
     border-color: #51be78 !important; }
@@ -201,13 +224,23 @@ body {
 
 .btn-primary {
   background-color: #3cc88f;
-  border-color: #3cc88f; }
+  border-color: #3cc88f; 
+  transition: .5s;
+}
+  
   .btn-primary:hover {
     background-color: #3cc88f !important;
-    border-color: #3cc88f !important; }
+    border-color: #3cc88f !important; 
+    transition: .5s;
+
+  }
+    
   .btn-primary:active {
     background-color: #3cc88f !important;
-    border-color: #3cc88f !important; }
+    border-color: #3cc88f !important;
+    transition: .5s;
+
+   }
   .btn-primary:focus {
     background-color: #3cc88f !important;
     border-color: #3cc88f !important;
@@ -343,6 +376,7 @@ header {
         border-radius: 50px; }
         header .nav-col .navbad li a:hover {
           background-color: #3cc88f;
+          transition: .5s;
           color: #fff !important; }
     header .nav-col .navbad .nav-btn {
       float: right; }
@@ -390,7 +424,9 @@ header {
 .slider-captions {
   position: absolute;
   bottom: 132px;
-  text-align: center; }
+  text-align: center;
+  
+ }
 
 @media screen and (max-width: 1050px) {
   .slider-captions {
@@ -430,6 +466,7 @@ header {
   background: linear-gradient(to bottom, rgba(45, 32, 44, 0.3) 0%, rgba(45, 32, 44, 0.1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#cc1b2429', endColorstr='#cc1b2429', GradientType=0);
   position: relative;
+  
  
 }
 
@@ -440,7 +477,8 @@ header {
   min-height:     600px;
   -ms-overflow-style: none;
   overflow-y: hidden; /* Hide vertical scrollbar */
-  overflow-x: hidden;  }
+  overflow-x: hidden; 
+ }
 
 .slider .owl-nav .owl-prev,
 .slider .owl-nav .owl-next {
@@ -458,11 +496,18 @@ header {
   line-height: 1;
   border: 2px solid #fff; }
 
+  .slider .owl-nav .owl-prev:hover,
+  .slider .owl-nav .owl-next:hover{
+    background-color: #3cc88f;
+
+
+  }
+
 .owl-controls.clickable .owl-buttons div:hover {
   filter: Alpha(Opacity=100);
   opacity: 1;
   text-decoration: none;
-  background-color: #fff; }
+  background-color: rgb(255, 255, 255); }
 
 .slider .owl-nav .owl-prev {
   position: absolute;
@@ -492,7 +537,7 @@ header {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  border: 2px solid #fff;
+  border: 2px solid rgb(255, 255, 255);
   float: left; }
 
 .slider .owl-dots .owl-dot.active span {
@@ -507,7 +552,8 @@ header {
 
 .slider .col-lg-offset-2 {
   float: none;
-  margin: auto; }
+  margin: auto;
+ }
 
 /* ===================================== About CSS ================================== */
 .about-us {
@@ -684,7 +730,7 @@ header {
   
 .link button{
   background-color: blue;
-
+  border-radius: 23px;
 }
 .our-blog .single-blog .link i {
   padding-top: 3px;
@@ -845,11 +891,16 @@ header {
   border-radius: 5px;
   text-align: center;
   color: #ffffff;
-  background-color: #3cc88f; }
+  background-color: #3cc88f;
+  transition: .7s;
+
+ }
 
 .btn-default:active .filter-button:active {
   background-color: #3cc88f;
-  color: white; }
+  color: white; 
+
+}
 
 .port-image {
   width: 100%; }
@@ -924,13 +975,20 @@ header {
 
 .our_activity .single-Promo:hover>h2 a {
     color: #01d262;
+    transition: .5s;
 }
 
 .our_activity .single-Promo:hover>.promo-icon i {
     background: #01d262;
     color: #fff;
-}
+    transition: .5s;
 
+}
+.single-Promo:hover{
+  transition: .5s;
+  /* background-color: #3cc88f; */
+  transform: translateY(-8px);
+}
 .our_activity .single-Promo:hover>h2::before {
     background: #01d262;
     color: #fff;
