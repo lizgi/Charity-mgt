@@ -24,11 +24,18 @@ def donation(request):
         form = donation_form(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            ngorequest=form.save()
+            ngorequest.save()
             return redirect('/')
     else:
         form = donation_form()
 
     return render(request, "request_form.html",{'form':form})
+
+def ngorequests(request):
+    ngorequest = donation_request.objects.filter(admin_approved=True)
+
+    return render(request, 'request_list.html', {'requests': ngorequest})
 
 def blog(request):
     return render(request, 'blog.html')
@@ -46,15 +53,15 @@ def profile(request):
             return redirect('profile')
 
     else:
-        u_form = UserUpdateForm(instance=request.user)
-        p_form = ProfileUpdateForm(instance=request.user.profile)
+        u_form = UserUpdateForm()
+        p_form = ProfileUpdateForm()
 
     context = {
         'u_form': u_form,
         'p_form': p_form
     }
 
-    return render(request, 'users/profile.html', context)
+    return render(request, 'profile.html', context)
 def ngo(request):
     if request.method == 'POST':
         form = NGO_form(request.POST, request.FILES)

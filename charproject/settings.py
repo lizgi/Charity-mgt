@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'king2',
+        'NAME': 'king5',
         'USER': 'access',
     'PASSWORD':'12345',
     }
@@ -159,7 +159,6 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'authenticationApp.User'
-AUTH_PROFILE_MODULE = 'charapp.UserProfile'
 
 
 
