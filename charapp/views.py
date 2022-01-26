@@ -56,11 +56,13 @@ def profile(request):
         u_form = UserUpdateForm()
         p_form = ProfileUpdateForm()
 
+    
+    myrequest = donation_request.objects.filter(admin_approved=True)
     context = {
         'u_form': u_form,
-        'p_form': p_form
+        'p_form': p_form,
+        'myrequests': myrequest
     }
-
     return render(request, 'profile.html', context)
 def ngo(request):
     if request.method == 'POST':
