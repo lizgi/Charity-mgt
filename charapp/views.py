@@ -25,11 +25,18 @@ def donation(request):
         form = donation_form(request.POST, request.FILES)
         if form.is_valid():
             form.save()
+            ngorequest=form.save()
+            ngorequest.save()
             return redirect('/')
     else:
         form = donation_form()
 
     return render(request, "request_form.html",{'form':form})
+
+def ngorequests(request):
+    ngorequest = donation_request.objects.filter(admin_approved=True)
+
+    return render(request, 'request_list.html', {'requests': ngorequest})
 
 def blog(request):
     return render(request, 'blog.html')
