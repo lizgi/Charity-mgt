@@ -104,20 +104,23 @@ class donation_request(models.Model):
 
 
     def __str__(self):
-        return self.donation_amount
+        return self.donation_amount 
 
-class donation_request_view(models.Model):
-    ngo_name = models.CharField(default=0,max_length=50,blank=False,primary_key=True)
-    domain = models.CharField(default=0,max_length=50,blank=False)
-    head_of_ngo = models.CharField(default=0,max_length=50,blank=False)
-    contactNo = models.CharField(default=0,max_length=10,blank=False)
-    email = models.EmailField(blank=False,default=0)
-    donation_description = models.TextField(default=0,blank=False)
-    donation_amount = models.CharField(default=0,max_length=10,blank=False)
+
+class CharityUser(models.Model):
+    username = models.CharField(max_length = 100,primary_key = True) # Charity User_Name
+    name = models.CharField(max_length = 100) # Charity Name
+    description = models.TextField() # Short Description about Charity
+    image = models.CharField(max_length=100)  # Path of Iamge
+    donors = models.IntegerField(default=0) # No of donors Donated
+    amount = models.IntegerField(default=0) # Total Amount of Donation Made
+    def __str__(self):
+        return self.name
+
+class Donor(models.Model):
+    username = models.CharField(max_length = 100) #UserName of Donor
+    amount = models.IntegerField(default=0) # Amount Donated
+    charityusername = models.CharField(max_length = 100) # Charity User Name to which it is donated
 
     def __str__(self):
-        return self.ngo_name
-
-    class Meta:
-        managed = False
-        db_table = 'post_request' 
+        return self.username
