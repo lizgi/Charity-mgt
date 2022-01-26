@@ -799,7 +799,12 @@ header {
   color: #FFF; }
 
 .copy a {
-  color: #FFF; }
+  color: #FFF;
+ }
+ .copy a:hover{
+  cursor: pointer;
+
+ }
 
 .copy span {
   float: right; }
