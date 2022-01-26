@@ -1,0 +1,117 @@
+{% extends 'registration/base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    
+{% block content%}
+<div class="glass-panel">
+    <br><br>
+<div class="container" style="margin:auto; color:white; width:max-content ;border-style:ridge ;box-shadow: 0 3px 10px rgb(0 0 0/1);">
+    <br>
+<form method="POST" accept-charset="utf-8">
+    {% csrf_token %}
+    {{form.as_p}}
+<div class="text-center">
+    <button type="submit"style="background-color:darkolivegreen" class="btn btn-sm btn mt-4">Log In</button>
+</div>
+</form>
+<br>
+<div class="text-center">
+    Don't have an account? 
+<a class="nav-link"  style="font-size: x-large; color: white;" href="{% url 'author_signup'%}" ><small>NGO Register <span style="color: blue;">Here</span></small></i></a>
+</div>
+<div class="text-center">
+<a class="nav-link" style="font-size: large; color: white;"  href="{% url 'customer_signup'%}" >Donor Register <span style="color: blue;">Here</span></i></a>
+</div>
+<br>
+</div>
+</div>
+<style>
+        /* styling using glassmorphism */
+.container{
+            border-radius: 15px;
+        }
+        .glass-panel {
+  color: #fff;
+  margin: 40px auto;
+  background-color: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  width: 100%;
+  border-radius: 15px;
+  padding: 32px;
+  backdrop-filter: blur(10px);
+}
+
+.glass-button {
+  display: inline-block;
+  padding: 24px 32px;
+  border: 0;
+  text-decoration: none;
+  border-radius: 15px;
+  background-color: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(30px);
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.glass-button:hover {
+  background-color: rgba(255,255,255,0.2);
+}
+
+/* Extra styles for demo */
+/* Article:  https://superdevresources.com/glassmorphism-ui-css/ */
+body {
+  background: url(https://images.pexels.com/photos/9783364/pexels-photo-9783364.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.glass-panel {  
+  max-width: 600px;
+}
+
+.glass-button {
+  margin: 15px;
+  margin-top: 40px;
+  border: .2em solid white;
+}
+
+h1, h1 a {
+  min-height: 120px;
+  width: 90%;
+  max-width: 700px;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: none;
+  color: #fff;
+  padding-top: 60px;
+  color: rgba(255,255,255,0.8);
+}
+
+p {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 32px;
+  color: rgba(255,255,255,0.6);
+}
+
+</style>
+{% endblock %}
+</body>
+</html>

@@ -1,56 +1,76 @@
 {% extends "base.html" %}
-
 {% block content %}
 
 
-<div id="portfolio" class="gallery">    
-    <div class="container">
-       
-       <div class="row">
-         
-
-
- <br/>
 
 
 
-     <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe">
-         <img src="/static/images/events/image_01.jpg" class="img-responsive">
-     </div>
-
-     <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter sprinkle">
-         <img src="/static/images/events/image_02.jpg" class="img-responsive">
-     </div>
-
-     <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe">
-         <img src="/static/images/events/image_01.jpg" class="img-responsive">
-     </div>
-
-     <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter irrigation">
-         <img src="/static/images/events/image_03.jpg" class="img-responsive">
-     </div>
-
-     <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter spray">
-         <img src="/static/images/events/image_04.jpg" class="img-responsive">
-     </div>
-
+ 
+  <!--  ********* Page Title Starts Here ********** -->
+        
    
+    
+   
+ <!--  ********* Gallery Starts Here ********** -->
+        <div id="portfolio" class="gallery">    
+           <div class="container">
+              
+              <div class="row">
+                
 
-     <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter spray">
-         <img src="/static/images/events/image_05.jpg" class="img-responsive">
-     </div>
+        <div class="gallery-filter d-none d-sm-block">
+            <button class="btn btn-default filter-button" data-filter="all">All</button>
+            <!-- <button class="btn btn-default filter-button" data-filter="hdpe">Health Care</button> -->
+            <button class="btn btn-default filter-button" data-filter="sprinkle">Vulnerable Groups</button>
+            <button class="btn btn-default filter-button" data-filter="spray"> Health Care</button>
+            <button class="btn btn-default filter-button" data-filter="irrigation">Child Education</button>
+        </div>
+        <br/>
 
-     <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter irrigation">
-         <img src="/static/images/events/image_06.jpg" class="img-responsive">
-     </div>
 
-     <div class="gallery_product col-lg-3 col-md-4 col-sm-3 col-xs-6 filter irrigation">
-         <img src="/static/images/events/image_07.jpg" class="img-responsive">
-     </div>
 
-     
- </div>
-</div>
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe">
+                <img src="/static/images/events/image_01.jpg" class="img-responsive">
+            </div>
 
-</div>
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter sprinkle">
+                <img src="/static/images/events/image_02.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter hdpe">
+                <img src="/static/images/events/image_01.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter irrigation">
+                <img src="/static/images/events/image_03.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter spray">
+                <img src="/static/images/events/image_04.jpg" class="img-responsive">
+            </div>
+
+          
+
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter spray">
+                <img src="/static/images/events/image_05.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-4 col-xs-6 filter irrigation">
+                <img src="/static/images/events/image_06.jpg" class="img-responsive">
+            </div>
+
+            <div class="gallery_product col-lg-3 col-md-4 col-sm-3 col-xs-6 filter irrigation">
+                <img src="/static/images/events/image_07.jpg" class="img-responsive">
+            </div>
+
+            
+        </div>
+    </div>
+       
+       
+       </div>
+        <!-- ######## Gallery End ####### -->    
+  
+                 
+       
 {% endblock %}

@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'authenticationApp',
+    
 ]
 
 MIDDLEWARE = [
@@ -62,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    
 ]
 
 ROOT_URLCONF = 'charproject.urls'
@@ -77,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -91,7 +95,7 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'group',
+        'NAME': 'group1',
         'USER': 'postgres',
     'PASSWORD':'test',
     }
@@ -99,7 +103,7 @@ DATABASES = {
 
 
 # cloudinary.config(
-#    cloud_name =config('CLOUD_NAME'),
+#     cloud_name =config('CLOUD_NAME'),
 #     api_key=config('CLOUD_API_KEY'), 
 #     api_secret=config('API_SECRET'),
 # )
@@ -136,7 +140,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 SECURE_SSL_REDIRECT = False
 
 
@@ -156,6 +159,8 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'authenticationApp.User'
+
+
 
 LOGIN_URL = 'login'
 
