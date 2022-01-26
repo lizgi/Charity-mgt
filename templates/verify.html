@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
 {% load crispy_forms_tags %}
-<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
 
 <h2 class="text-center mt-4 text-success">NGO</h2>
 
@@ -10,6 +9,7 @@
         {% csrf_token %}
         <input type="text" hidden value="" name="ngo_user">
         {{form|crispy}}
+<<<<<<< HEAD
             <label for="cars" class="mt-4 " >Choose Category:</label>
             <select name="Category">
                 <option value="select">Select...</option>
@@ -19,9 +19,11 @@
             </select>
             <br><br>
           
+=======
+
+>>>>>>> 626f305371a91a0a370f31fa789d4c2374beadba
         <button type="submit" class="btn btn-outline-success mt-6">Submit</button>
     </form>
 </div>
-<!-- ---------------------------------------------------------------------------------------------------------------------------- -->
 
 {% endblock %}
