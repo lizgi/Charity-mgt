@@ -95,9 +95,9 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'chary',
-        'USER': 'moringa',
-    'PASSWORD':'12345',
+        'NAME': 'group1',
+        'USER': 'postgres',
+    'PASSWORD':'test',
     }
 }
 
@@ -140,7 +140,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4be4c81b58deb98bae39d032de24118c16a16138
 SECURE_SSL_REDIRECT = False
 
 # Static files (CSS, JavaScript, Images)

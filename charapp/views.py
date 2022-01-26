@@ -92,5 +92,22 @@ def about(request):
     return render(request,'about.html')
 
 def payment(request):
+    
+    if request.method == 'POST':
+        username = request.POST['username']
+        charityusername = request.POST['charityusername']
+        amount = request.POST['amount']
+
+        # Saving Payment Details
+        donation = NGO()
+        donation.username = username
+        donation.charityusername = charityusername
+        donation.amount = amount
+        donation.save()
+
+        # Updating Variables
+       
+        #Successful Message
+        messages.success(request, "Payment Successful") 
     return render(request,'payment.html')
 
