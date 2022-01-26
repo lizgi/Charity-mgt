@@ -16,7 +16,10 @@ from .models import Profile
 class donation_form(forms.ModelForm):
     class Meta:
         model = donation_request
-        fields = ('ngo_name', 'donation_description','donation_amount', 'Request_for_donation',)
+        fields = ('ngo_name','head_of_ngo','contactNo','email','donation_amount', 'Reason_for_donation_request')
+        widgets = {
+            'Reason_for_donation_request': forms.Textarea(attrs={'cols' : 20, 'rows' : 3}),
+        }
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
