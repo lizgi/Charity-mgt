@@ -35,7 +35,7 @@ SECRET_KEY = 'SECRET_KEY'
 # # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'authenticationApp',
+    
 ]
 
 MIDDLEWARE = [
@@ -62,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    
 ]
 
 ROOT_URLCONF = 'charproject.urls'
@@ -77,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -89,10 +93,18 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'charo',
+        'USER': 'moringa',
+    'PASSWORD':'12345',
+    }
+}
 
 
 # cloudinary.config(
-#    cloud_name =config('CLOUD_NAME'),
+#     cloud_name =config('CLOUD_NAME'),
 #     api_key=config('CLOUD_API_KEY'), 
 #     api_secret=config('API_SECRET'),
 # )
@@ -129,14 +141,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'charity',
-        'USER': 'moringa',
-    'PASSWORD':'12345',
-    }
-}
 SECURE_SSL_REDIRECT = False
 
 

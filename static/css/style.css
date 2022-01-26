@@ -299,16 +299,16 @@ header {
     padding: 6px;
     background-color: #fff; }
 
-  .logo{
+.logo{
       max-width: 2%;
       padding: -105px;
       
-    }
-    .logo img{
+}
+.logo img{
       width: 150%;
       height: 50%;
      
-    }
+}
     @media screen and (max-width: 991px) {
       header .header-bottom {
         padding: 0px; } }
@@ -857,4 +857,93 @@ header {
 .gallery_product {
   margin-bottom: 30px; }
 
+
+  .our_activity {
+    margin-bottom: 140px;
+}
+
+.our_activity .single-Promo {
+    border-radius: 7px;
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+    margin: 100px 35px 0;
+    padding: 40px 45px;
+    position: relative;
+}
+
+.our_activity .single-Promo .promo-icon {
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: -40px;
+    width: 100%;
+}
+
+.our_activity .single-Promo h2 {
+    border-radius: 60px;
+    margin: 10px auto 38px;
+    position: relative;
+    width: -moz-fit-content;
+}
+
+.our_activity .single-Promo h2::before {
+    background: #000 none repeat scroll 0 0;
+    bottom: -5px;
+    content: "";
+    height: 2px;
+    left: 20%;
+    position: absolute;
+    width: 60%;
+}
+
+.our_activity .single-Promo h2 a {
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: #3c354e;
+}
+
+.our_activity .single-Promo p {
+    color: #3c354e;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
+}
+
+.our_activity .single-Promo i {
+    border: 0 solid #000;
+    border-radius: 50%;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+    font-size: 30px;
+    padding: 25px;
+    text-align: center;
+    background: #fff;
+}
+
+.our_activity .single-Promo:hover>h2 a {
+    color: #01d262;
+}
+
+.our_activity .single-Promo:hover>.promo-icon i {
+    background: #01d262;
+    color: #fff;
+}
+
+.our_activity .single-Promo:hover>h2::before {
+    background: #01d262;
+    color: #fff;
+}
+
+
+@media (min-width: 992px) and (max-width: 1300px) {
+  .our_activity .single-Promo {
+      margin: 100px 30px 0;
+      padding: 40px 30px;
+  }
+  .our_activity .single-Promo p {
+      text-align: justify;
+  }
+ 
 /*# sourceMappingURL=style.css.map */
