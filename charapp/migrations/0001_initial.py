@@ -40,6 +40,26 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.CreateModel(
+            name='CharityUser',
+            fields=[
+                ('username', models.CharField(max_length=100, primary_key=True, serialize=False)),
+                ('name', models.CharField(max_length=100)),
+                ('description', models.TextField()),
+                ('image', models.CharField(max_length=100)),
+                ('donors', models.IntegerField(default=0)),
+                ('amount', models.IntegerField(default=0)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Donor',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('username', models.CharField(max_length=100)),
+                ('amount', models.IntegerField(default=0)),
+                ('charityusername', models.CharField(max_length=100)),
+            ],
+        ),
+        migrations.CreateModel(
             name='NGO',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
