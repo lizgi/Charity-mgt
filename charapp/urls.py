@@ -16,7 +16,6 @@ urlpatterns = [
 
     path('about/', views.about, name='about'),
 
-    path('requests/', RequestList.as_view()),
 
 
 ]
