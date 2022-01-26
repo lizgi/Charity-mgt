@@ -1,7 +1,8 @@
 from django.contrib import messages,admin
 from django.utils.translation import ngettext
-
-from .models import donation_request
+from .models import donation_request,Profile
+admin.site.register(donation_request)
+admin.site.register(Profile)
 
 # Register your models here.
 class DonationAdmin(admin.ModelAdmin):
@@ -27,4 +28,4 @@ class DonationAdmin(admin.ModelAdmin):
             updated,
         ) % updated, messages.SUCCESS)
 
-admin.site.register(donation_request, DonationAdmin)
+

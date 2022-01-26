@@ -88,7 +88,6 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -97,6 +96,7 @@ DATABASES = {
     'PASSWORD':'test',
     }
 }
+
 
 # cloudinary.config(
 #    cloud_name =config('CLOUD_NAME'),
@@ -136,6 +136,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+
 SECURE_SSL_REDIRECT = False
 
 
@@ -146,6 +147,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
