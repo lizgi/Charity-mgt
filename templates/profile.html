@@ -1,29 +1,13 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-{% load static%}
-
-{% block styles %}
-  
-   
-   
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Shalimar&display=swap" rel="stylesheet"> -->
-
-  {% endblock %}
-
 {% block content %}
 
-    <div class="container mb-4">
-        <h1>Donor Profile</h1>
-      <div class="media">
-        <img class="mt-20px rounded-circle account-img" src="{{ user.profile.image.url }}">
+    <div class="content-section ml-5 mt-5 ">
+      <div class="media mt-4 ">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
         <div class="media-body">
           <h2 class="account-heading">{{ user.username }}</h2>
-          <p class="text-secondary">{{ user.email }}</p>
+          <p class="text-secondary mb-4">{{ user.email }}</p>
         </div>
       </div>
       <form method="POST" enctype="multipart/form-data">
@@ -32,74 +16,37 @@
               <legend class="border-bottom mb-4">Profile Info</legend>
               {{ u_form|crispy }}
               {{ p_form|crispy }}
+              
           </fieldset>
           <div class="form-group">
               <button class="btn btn-outline-info" type="submit">Update</button>
           </div>
       </form>
     </div>
-  </div>
-  <div class="d-flex justify-content-center form_container">
+    <hr>
+    <div class="container ml-3 text-center">
 
-    <form method="POST" action="">
-      {% csrf_token %}
-      <div class="input-group mb-3">
-        <div class="input-group-append">
-          <span class="input-group-text"><i class="fas fa-user"></i></span>
-        </div>
-        {{form.username}}
+      <h2 class="mb-4">NGO Requests</h2>
+      <div class="col-md-4 ">
+          <ul>
+              {% for myrequest in myrequests %}
+              <div class="card " style="width: 65rem;">
+                  <div class="card-body">
+                    <h5 class="card-title">NGO Name: {{myrequest.ngo_name}}</h5>
+                    <h5 class="card-title">NGO Contact: {{myrequest.contactNo}}</h5>
+                    <h5 class="card-title">NGO Email: {{myrequest.email}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Target Amount:{{myrequest.donation_amount}}</h6>
+                    <p class="card-text"><strong>Reason for donations: </strong>{{myrequest.Reason_for_donation_request}}</p>
+                  </div>
+                </div>
+      
+              {% endfor %}
+          </ul>
+      
+
       </div>
-      <div class="input-group mb-2">
-        <div class="input-group-append">
-          <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
-        </div>
-        {{form.email}}
-      </div>
-      <div class="input-group mb-2">
-        <div class="input-group-append">
-          <span class="input-group-text"><i class="fas fa-key"></i></span>
-        </div>
-        {{form.password1}}
-      </div>
-      <div class="input-group mb-2">
-        <div class="input-group-append">
-          <span class="input-group-text"><i class="fas fa-key"></i></span>
-        </div>
-        {{form.password2}}
-      </div>
+  
 
-
-
-         <div class="d-flex justify-content-center mt-3 login_container">
-         <input class="btn login_btn" type="submit" value="Register Account">
-         </div>
-
-    </form>
-  </div>
-
+  
+</div>
 {% endblock content %}
-
-
-<form method="POST" enctype="multipart/form-data">
-  {% csrf_token %}
-  {{form.username.label}}
-  {{form.username}}
-
-  {{form.email.label}}
-  {{form.email}}
-
-
-  {{form.password1.label}}
-  {{form.password1}}
-
-
-
-  {{form.password2.label}}
-  {{form.password2}}
-
-  <input type="submit" name="Create User">
-
-</form>
-
-
-

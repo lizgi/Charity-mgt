@@ -3,15 +3,10 @@ from distutils.command.upload import upload
 from email.mime import image
 from email.policy import default
 from django.conf import settings
-
-from pyexpat import model
-from tkinter import CASCADE
 from django.db import models
-
 from PIL import Image
 from django.conf import settings
 from django.contrib.auth.models import User
-from django_currentuser.middleware import get_current_user, get_current_authenticated_user
 
 
 # Create your models here.
@@ -21,6 +16,7 @@ STATUS_CHOICES = [
     ('A', 'Approved'),
     ('w', 'Withdrawn'),
 ]
+
   
 #Category class
 class Category(models.Model):
@@ -31,6 +27,24 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    image = models.ImageField(default=0, upload_to='profile_pics')
+
+    def __str__(self):
+        return f'{self.user.username} Profile'
+
+    def save(self):
+        super().save()
+
+        img = Image.open(self.image.path)
+
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.image.path)
 
 class NGO(models.Model):
     ngo_name = models.CharField(max_length=30,blank=True)
@@ -56,26 +70,23 @@ class NGO(models.Model):
         self.save()
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
-    def __str__(self):
-        return f'{self.user.username} Profile'
+    def verification_true(self):
+        self.verification_status=True        
+        self.save()
 
-    def save(self):
-        super().save()
+    def verification_false(self):
+        self.verification_status = False
+        self.save()
 
-        img = Image.open(self.image.path)
+    def get_user(self,user):
+        self.ngo_user = user
+        self.save()
 
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
-    
-    def __str__(self):
+    def _str_(self):
         return self.ngo_name
 
+   
 
 class donation_request(models.Model):
     ngo_name = models.CharField(max_length=50,blank=False,primary_key=True)
@@ -110,3 +121,22 @@ class donation_request_view(models.Model):
     class Meta:
         managed = False
         db_table = 'post_request' 
+
+
+class CharityUser(models.Model):
+    username = models.CharField(max_length = 100,primary_key = True) # Charity User_Name
+    name = models.CharField(max_length = 100) # Charity Name
+    description = models.TextField() # Short Description about Charity
+    image = models.CharField(max_length=100)  # Path of Iamge
+    donors = models.IntegerField(default=0) # No of donors Donated
+    amount = models.IntegerField(default=0) # Total Amount of Doantion Made
+    def __str__(self):
+        return self.name
+
+class Donor(models.Model):
+    username = models.CharField(max_length = 100) #UserName of Donor
+    amount = models.IntegerField(default=0) # Amout Donated
+    charityusername = models.CharField(max_length = 100) # Charity User Name to which it is donated
+
+    def __str__(self):
+        return self.username

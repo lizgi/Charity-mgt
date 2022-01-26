@@ -9,6 +9,7 @@
         {% csrf_token %}
         <input type="text" hidden value="" name="ngo_user">
         {{form|crispy}}
+
         <button type="submit" class="btn btn-outline-success mt-6">Submit</button>
     </form>
 </div>

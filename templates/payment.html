@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="donors">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="donors_image">
+                    <h2>DONATION PROJECT</h2>
+                    
+                    <div class="event-box">
+                        <img src="/static/images/hosi.jpg" alt="">
+                        <h4>{{Charity.name}}</h4>
+                        <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
+                        <p class="desic">People around the globe are able to get proper medical care from the funding raised from the donors.</p>
+                        
+                    </div>
+                        
+                        
+                    
+                </div>
+                <div class="donors_input">
+                    <h2>MAKE DONATION</h2>
+                    <form action="{% url 'payment' %}" method="post">
+                        {% csrf_token %}
+                        
+                       
+                        
+                        <h4>
+                            <select>
+                            <option>How would you like to pay</option>
+                            <option>Mpesa</option>
+                            <option>Debit or Credit Card</option>
+                            <option>Paypal</option>
+                        </select>
+                        </h4>
+                        
+                        <h5><input type="amount" placeholder="AMOUNT TO DONATE"></h5>
+                        <input type="submit" value="DONATE">
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

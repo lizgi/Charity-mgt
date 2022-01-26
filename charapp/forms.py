@@ -21,6 +21,13 @@ class donation_form(forms.ModelForm):
             'Reason_for_donation_request': forms.Textarea(attrs={'cols' : 20, 'rows' : 3}),
         }
 
+
+from django import forms
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from .models import Profile
+
+
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
 
@@ -44,7 +51,7 @@ class ProfileUpdateForm(forms.ModelForm):
 class NGO_form(forms.ModelForm):
     class Meta:
         model = NGO
-        fields = ('ngo_name','Amount',  'head_of_ngo','contactNo','email',)
+        fields = ('ngo_name','head_of_ngo','Reason_for_donation','Amount','contactNo','email')
 
 
 
