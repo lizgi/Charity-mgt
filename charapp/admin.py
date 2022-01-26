@@ -1,25 +1,17 @@
-
-
+from django.contrib import messages,admin
+from django.utils.translation import ngettext
+from .models import Category, donation_request,Profile
+from .models import NGO, donation_request , donation_request_view
 
 
 # Register your models here.
 admin.site.register(Profile)
-admin.site.register(NGO)
-
-admin.site.register(donation_request)
-
 admin.site.register(donation_request_view)
+admin.site.register(Category)
 
-from django.contrib import messages,admin
-from django.utils.translation import ngettext
-from .models import donation_request,Profile
-from .models import NGO, donation_request , donation_request_view
 
-admin.site.register(donation_request, DonationAdmin,Profile)
-
-# Register your models here.
 class DonationAdmin(admin.ModelAdmin):
-    list_display = ['donation_amount', 'status']
+    list_display = ['ngo_name','status']
     ordering = ['donation_amount']
     actions = ['make_approval','make_rejection']
 
@@ -41,5 +33,6 @@ class DonationAdmin(admin.ModelAdmin):
             updated,
         ) % updated, messages.SUCCESS)
 
+admin.site.register(donation_request,DonationAdmin)
 
 
