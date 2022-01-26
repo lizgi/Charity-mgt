@@ -44,7 +44,7 @@ class ProfileUpdateForm(forms.ModelForm):
 class NGO_form(forms.ModelForm):
     class Meta:
         model = NGO
-        fields = ('ngo_name','Amount',  'head_of_ngo','contactNo','email',)
+        fields = ('ngo_name','head_of_ngo','Reason_for_donation','Amount','contactNo','email')
 
 
 

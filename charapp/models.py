@@ -21,6 +21,7 @@ STATUS_CHOICES = [
     ('A', 'Approved'),
     ('w', 'Withdrawn'),
 ]
+
   
 #Category class
 class Category(models.Model):
@@ -56,6 +57,20 @@ class NGO(models.Model):
         self.save()
 
 
+    def verification_true(self):
+        self.verification_status=True        
+        self.save()
+
+    def verification_false(self):
+        self.verification_status = False
+        self.save()
+
+    def get_user(self,user):
+        self.ngo_user = user
+        self.save()
+
+    def _str_(self):
+        return self.ngo_name
 class Profile(models.Model):
     user = models.OneToOneField(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     image = models.ImageField(default='default.jpg', upload_to='profile_pics')
