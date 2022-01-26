@@ -35,5 +35,3 @@ class DonationAdmin(admin.ModelAdmin):
             updated,
         ) % updated, messages.SUCCESS)
 
-
-
