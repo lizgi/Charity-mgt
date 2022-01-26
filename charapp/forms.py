@@ -21,6 +21,13 @@ class donation_form(forms.ModelForm):
             'Reason_for_donation_request': forms.Textarea(attrs={'cols' : 20, 'rows' : 3}),
         }
 
+
+from django import forms
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from .models import Profile
+
+
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
 
