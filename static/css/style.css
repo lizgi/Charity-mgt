@@ -17,10 +17,21 @@ Description: This Template is created for Youtubers
   text-decoration: none;
   font-family: sans-serif, serif;
  }
+a{
+  text-decoration: none;
 
-a h1:hover{
-  text-decoration: none !important;
 }
+.logo h1{
+  text-decoration: none !important;
+  cursor: pointer;
+  color: blue;
+
+}
+.logo h1:hover{
+  text-decoration: none;
+
+}
+
 
 img {
   max-width: 100%;
@@ -788,7 +799,12 @@ header {
   color: #FFF; }
 
 .copy a {
-  color: #FFF; }
+  color: #FFF;
+ }
+ .copy a:hover{
+  cursor: pointer;
+
+ }
 
 .copy span {
   float: right; }
