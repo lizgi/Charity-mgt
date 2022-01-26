@@ -1,8 +1,6 @@
 from django.contrib import messages,admin
 from django.utils.translation import ngettext
-from .models import Category, donation_request,Profile
-from .models import NGO, donation_request , donation_request_view
-
+from .models import NGO, donation_request , donation_request_view, Profile, Category
 
 # Register your models here.
 admin.site.register(Profile)

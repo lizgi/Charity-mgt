@@ -72,7 +72,7 @@ p {
   height: 100%; }
 
 ::placeholder {
-  color: #747f8a !important;
+  color: black !important;
   font-size: 13px;
   opacity: .5 !important; }
 
@@ -946,4 +946,219 @@ header {
       text-align: justify;
   }
  
+}
+
+.donors {
+  height: 600px;
+}
+
+.donors .donors_input {
+  background: #01d262 none repeat scroll 0 0;
+  float: left;
+  height: 600px;
+  text-align: center;
+  width: 50%;
+}
+
+.donors .donors_input h2,
+.donors .donors_image h2 {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  margin: 75px 0 50px;
+  text-align: center;
+}
+
+.donors .donors_image h2 {
+  color: #000;
+}
+
+.donors .donors_input p {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 35px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.donors .donors_input p input {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.donors .donors_input h5 {
+  margin: 65px auto 0;
+  max-width: 500px;
+}
+
+.donors .donors_input h5 input {
+  background: #01d262 none repeat scroll 0 0;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  color: #fff;
+  padding: 17px 20px;
+  width: 47%;
+}
+
+.donors .donors_input h5 input[type="text"] {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  margin-right: 2%;
+}
+
+.donors .donors_input h5 input[type="email"] {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+  margin-left: 2%;
+}
+
+.donors .donors_input input[type="submit"] {
+  background: #fff none repeat scroll 0 0;
+  border: 2px solid #01d262;
+  border-radius: 10px;
+  color: #01d262;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  margin-top: 45px;
+  padding: 15px 40px;
+}
+
+.donors .donors_input h4 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.donors .donors_input h4 select {
+  width: 500px;
+  background: #01d262 none repeat scroll 0 0;
+  border: none;
+  padding: 17px 20px;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.donors .donors_image {
+  background: #eceff1 none repeat scroll 0 0;
+  float: left;
+  width: 50%;
+  height: 600px;
+}
+
+.donors .donors_image .item {
+  text-align: center;
+}
+
+.donors .donors_image .item img {
+  border-radius: 10px;
+  margin: 0 auto 30px;
+  width: 385px;
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.donors .donors_image .item h3 {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.donors .donors_image .item p {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 10px 0 75px;
+}
+
+.donors .donors_image .item p span {
+  color: #01d262;
+}
+
+.donors .donors_image .owl-theme .owl-nav {
+  margin-top: 10px;
+  display: none;
+}
+
+.donors .donors_image .owl-theme .owl-dots .owl-dot.active span,
+.donors .donors_image .owl-theme .owl-dots .owl-dot:hover span {
+  background: #01d262 none repeat scroll 0 0;
+  border: 1px solid #01d262;
+}
+
+.donors .donors_image .owl-theme .owl-dots .owl-dot span {
+  border: 1px solid #7b7e80;
+  height: 12px;
+  width: 12px;
+}
+
+
+
+@media (min-width: 992px) and (max-width: 1300px) {
+  .donors .donors_input h4 select {
+    max-width: 483px;
+}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .donors .donors_input {
+    width: 100%;
+    float: none;
+}
+.donors .donors_image {
+    float: left;
+    width: 100%;
+}
+.donors .donors_input h2,
+.donors .donors_image h2 {
+    padding-top: 60px;
+}
+}
+
+
+@media only screen and (max-width: 767px) {
+  .donors .donors_input {
+    float: none;
+    width: 100%;
+    padding: 10px;
+}
+.donors .donors_image {
+    float: left;
+    width: 100%;
+}
+.donors .donors_input h2,
+.donors .donors_image h2 {
+    padding-top: 60px;
+}
+.donors .donors_input h4 select {
+    width: 100%;
+}
+.donate_section .progress-text {
+    width: 100%;
+}
+.donors .donors_input h2,
+.donors .donors_image h2 {
+    padding-top: 20px;
+}
+.donate_section p {
+    text-align: justify;
+}
+.donors .donors_input h2,.donors .donors_image h2 {
+        margin: 0px 0 50px;
+    }
+.donors .donors_input p input {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+  }
+
 /*# sourceMappingURL=style.css.map */
