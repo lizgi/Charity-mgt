@@ -18,12 +18,14 @@ Description: This Template is created for Youtubers
   font-family: sans-serif, serif;
  }
 
+a h1:hover{
+  text-decoration: none !important;
+}
+
 img {
   max-width: 100%;
   border-radius: 5px;
   transition: transform .5s;
-
-
  }
 
   img:hover{
@@ -94,7 +96,9 @@ p {
   padding: 0px; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #545454; }
+  color: #545454;
+ }
+  
 
 body {
   background-color: #f1f1f145 !important;
@@ -201,10 +205,15 @@ body {
 
 .btn-success {
   background-color: #51be78;
-  border-color: #51be78; }
+  border-color: #51be78;
+
+ }
+
   .btn-success:hover {
     background-color: #51be78 !important;
-    border-color: #51be78 !important; }
+    border-color: #51be78 !important; 
+
+  }
   .btn-success:active {
     background-color: #51be78 !important;
     border-color: #51be78 !important; }
@@ -215,13 +224,23 @@ body {
 
 .btn-primary {
   background-color: #3cc88f;
-  border-color: #3cc88f; }
+  border-color: #3cc88f; 
+  transition: .5s;
+}
+  
   .btn-primary:hover {
     background-color: #3cc88f !important;
-    border-color: #3cc88f !important; }
+    border-color: #3cc88f !important; 
+    transition: .5s;
+
+  }
+    
   .btn-primary:active {
     background-color: #3cc88f !important;
-    border-color: #3cc88f !important; }
+    border-color: #3cc88f !important;
+    transition: .5s;
+
+   }
   .btn-primary:focus {
     background-color: #3cc88f !important;
     border-color: #3cc88f !important;
@@ -357,6 +376,7 @@ header {
         border-radius: 50px; }
         header .nav-col .navbad li a:hover {
           background-color: #3cc88f;
+          transition: .5s;
           color: #fff !important; }
     header .nav-col .navbad .nav-btn {
       float: right; }
@@ -472,11 +492,18 @@ header {
   line-height: 1;
   border: 2px solid #fff; }
 
+  .slider .owl-nav .owl-prev:hover,
+  .slider .owl-nav .owl-next:hover{
+    background-color: #3cc88f;
+
+
+  }
+
 .owl-controls.clickable .owl-buttons div:hover {
   filter: Alpha(Opacity=100);
   opacity: 1;
   text-decoration: none;
-  background-color: #fff; }
+  background-color: rgb(255, 255, 255); }
 
 .slider .owl-nav .owl-prev {
   position: absolute;
@@ -506,7 +533,7 @@ header {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
-  border: 2px solid #fff;
+  border: 2px solid rgb(255, 255, 255);
   float: left; }
 
 .slider .owl-dots .owl-dot.active span {
@@ -521,7 +548,8 @@ header {
 
 .slider .col-lg-offset-2 {
   float: none;
-  margin: auto; }
+  margin: auto;
+ }
 
 /* ===================================== About CSS ================================== */
 .about-us {
@@ -859,11 +887,16 @@ header {
   border-radius: 5px;
   text-align: center;
   color: #ffffff;
-  background-color: #3cc88f; }
+  background-color: #3cc88f;
+  transition: .7s;
+
+ }
 
 .btn-default:active .filter-button:active {
   background-color: #3cc88f;
-  color: white; }
+  color: white; 
+
+}
 
 .port-image {
   width: 100%; }
