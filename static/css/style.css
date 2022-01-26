@@ -975,13 +975,20 @@ header {
 
 .our_activity .single-Promo:hover>h2 a {
     color: #01d262;
+    transition: .5s;
 }
 
 .our_activity .single-Promo:hover>.promo-icon i {
     background: #01d262;
     color: #fff;
-}
+    transition: .5s;
 
+}
+.single-Promo:hover{
+  transition: .5s;
+  /* background-color: #3cc88f; */
+  transform: translateY(-8px);
+}
 .our_activity .single-Promo:hover>h2::before {
     background: #01d262;
     color: #fff;
