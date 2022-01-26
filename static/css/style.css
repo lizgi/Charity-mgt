@@ -684,7 +684,7 @@ header {
   
 .link button{
   background-color: blue;
-
+  border-radius: 23px;
 }
 .our-blog .single-blog .link i {
   padding-top: 3px;

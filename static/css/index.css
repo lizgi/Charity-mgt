@@ -133,7 +133,7 @@ textarea {
 .filter-button:hover {
   font-size: 18px;
   border: 1px solid #3cc88f;
-  border-radius: 5px;
+  border-radius: 8px;
   text-align: center;
   color: #ffffff;
   background-color: #3cc88f; }
@@ -219,6 +219,7 @@ form{
     
   .link button{
     background-color: blue;
+    
 
   }
   .our-blog .single-blog .link i {
