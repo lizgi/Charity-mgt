@@ -2,11 +2,9 @@
 from . import views
 from django.urls import path
 from .views import Index
-from django.conf.urls import url
 
 urlpatterns = [
     path('', Index, name='index'),
-    url(r'^fund_request/$', views.donation,name="fund request"),
     path('donation/', views.donation),
     path('blog/', views.blog, name='blog'),
     path('ngo/', views.ngo),
@@ -17,6 +15,7 @@ urlpatterns = [
 
     path('requests/', views.ngorequests,name='ngorequests')
 
+   
 
 ]
 

@@ -140,8 +140,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-SECURE_SSL_REDIRECT = False
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4be4c81b58deb98bae39d032de24118c16a16138
+SECURE_SSL_REDIRECT = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
