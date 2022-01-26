@@ -95,9 +95,9 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'king5',
-        'USER': 'access',
-    'PASSWORD':'12345',
+        'NAME': 'group1',
+        'USER': 'postgres',
+    'PASSWORD':'test',
     }
 }
 
