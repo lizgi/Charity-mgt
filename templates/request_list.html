@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+
+        <h2>NGO Requests</h2>
+        <div class="col-md-4">
+            <ul>
+                {% for request in requests %}
+                <div class="card" style="width: 25rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">NGO Name: {{request.ngo_name}}</h5>
+                      <h5 class="card-title">NGO Contact: {{request.contactNo}}</h5>
+                      <h5 class="card-title">NGO Email: {{request.email}}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Target Amount:{{request.donation_amount}}</h6>
+                      <p class="card-text"><strong>Reason for donations: </strong>{{request.Reason_for_donation_request}}</p>
+                      <a href="#" class="card-link">Donate</a>
+                    </div>
+                  </div>
+        
+                {% endfor %}
+            </ul>
+        
+
+        </div>
+    
+
+    
+</div>
+    
+{% endblock %}
