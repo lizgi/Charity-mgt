@@ -56,11 +56,13 @@ def profile(request):
         u_form = UserUpdateForm()
         p_form = ProfileUpdateForm()
 
+    
+    myrequest = donation_request.objects.filter(admin_approved=True)
     context = {
         'u_form': u_form,
-        'p_form': p_form
+        'p_form': p_form,
+        'myrequests': myrequest
     }
-
     return render(request, 'profile.html', context)
 def ngo(request):
     if request.method == 'POST':
@@ -90,5 +92,22 @@ def about(request):
     return render(request,'about.html')
 
 def payment(request):
+    
+    if request.method == 'POST':
+        username = request.POST['username']
+        charityusername = request.POST['charityusername']
+        amount = request.POST['amount']
+
+        # Saving Payment Details
+        donation = NGO()
+        donation.username = username
+        donation.charityusername = charityusername
+        donation.amount = amount
+        donation.save()
+
+        # Updating Variables
+       
+        #Successful Message
+        messages.success(request, "Payment Successful") 
     return render(request,'payment.html')
 
