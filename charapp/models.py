@@ -29,6 +29,7 @@ class Category(models.Model):
 
 
 
+
 class Profile(models.Model):
     user = models.OneToOneField(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     image = models.ImageField(default=0, upload_to='profile_pics')
