@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+
+from authenticationApp.decorators import donor_required, ngo_required
 from .forms import  donation_form
 from .forms import  UserUpdateForm, ProfileUpdateForm
 # from django.contrib.auth.decorators import login_required
@@ -19,7 +21,8 @@ stripe.api_key = 'pk_test_51KMSP6KoSUQSUmrFIOOBDtlAciRFv0HLp9FiEHuOgICwA25UYnA3X
 # Create your views here.
 def Index(request):
     return render(request,'index.html')
-    
+
+@ngo_required(login_url='/login')
 def donation(request):
     if request.method == 'POST':
         form = donation_form(request.POST, request.FILES)
@@ -33,6 +36,7 @@ def donation(request):
 
     return render(request, "request_form.html",{'form':form})
 
+@donor_required(login_url='/login')
 def ngorequests(request):
     ngorequest = donation_request.objects.filter(admin_approved=True)
 
@@ -65,6 +69,8 @@ def profile(request):
         'myrequests': myrequest
     }
     return render(request, 'profile.html', context)
+
+@ngo_required(login_url='/login')
 def ngo(request):
     if request.method == 'POST':
         form = NGO_form(request.POST, request.FILES)
@@ -92,6 +98,7 @@ def verify_from_admin(request):
 def about(request):
     return render(request,'about.html')
 
+@donor_required(login_url='/login')
 def payment(request):
     
     if request.method == 'POST':
@@ -112,7 +119,7 @@ def payment(request):
         messages.success(request, "Payment Successful") 
     return render(request,'paymentt.html')
 
-
+@donor_required(login_url='/login')
 def payment(request):
     return render(request, 'paymentt.html')    
 
