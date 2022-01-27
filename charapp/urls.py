@@ -12,8 +12,10 @@ urlpatterns = [
     path('contact/', views.Contact, name='contactUs'),
     path('about/', views.about, name='about'),
     path('payment/',views.payment,name = 'payment'),
+    path('paymentt/', views.payment, name='paymentt'),
+    path('requests/', views.ngorequests,name='ngorequests'),
+    path('charge/', views.charge, name="charge"),
 
-    path('requests/', views.ngorequests,name='ngorequests')
 
    
 

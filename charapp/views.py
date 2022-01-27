@@ -3,6 +3,7 @@ from .forms import  donation_form
 from .forms import  UserUpdateForm, ProfileUpdateForm
 # from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+import stripe
 
 
 from django.shortcuts import render, redirect,HttpResponse
@@ -14,7 +15,7 @@ from datetime import date
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
 
-
+stripe.api_key = 'pk_test_51KMSP6KoSUQSUmrFIOOBDtlAciRFv0HLp9FiEHuOgICwA25UYnA3XFRohDDtq98PlLRbLSYjZSaUSoghHAtyqEps00LC97CniE'
 # Create your views here.
 def Index(request):
     return render(request,'index.html')
@@ -109,5 +110,31 @@ def payment(request):
        
         #Successful Message
         messages.success(request, "Payment Successful") 
-    return render(request,'payment.html')
+    return render(request,'paymentt.html')
 
+
+def payment(request):
+    return render(request, 'paymentt.html')    
+
+def charge(request):
+    if request.method == 'POST':
+
+        cus_name = request.POST["cus_name"]
+        amount = request.POST["amount"]
+        doantion_message = request.POST["message"]
+        mail = request.POST["mail"]
+
+        customer = stripe.Customer.create(
+            email = mail,
+            name = cus_name,
+            # source = request.POST["stripeToken"]
+        )
+
+        charge = stripe.Charge.create (
+            customer = customer,
+            amount = int(amount)*100,
+            currency = 'INR',
+            description = doantion_message
+        )
+
+        return render(request, 'payment.html',{'amount':amount})
