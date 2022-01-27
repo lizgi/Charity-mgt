@@ -3,68 +3,62 @@
 {% load static%}
 {% block content%}
 
-
-<head>
-<title>Charity Center | Contact</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="/static/css/contact/reset.css" type="text/css" media="all">
-<link rel="stylesheet" href="/static/css/contact/layout.css" type="text/css" media="all">
-<link rel="stylesheet" href="/static/css/contact/style.css" type="text/css" media="all">
-</head>
-<div class="body1">
-  <div class="main">
-    
-    <!-- content -->
-    <article id="content">
-      <div class="wrapper">
-        <div class="box1">
-          <div class="line1 wrapper">
-            <section class="col1">
-              <h2><strong>O</strong>ur<span>Address</span></h2>
-              <strong class="address"> Country:<br>
-              City:<br>
-              Zip Code:<br>
-              Telephone:<br>
-              Fax:<br>
-              E-Mail: </strong> Kenya<br>
-              Nairobi<br>
-              00100<br>
-              +254 92557473<br>
-              +254 5635610<br>
-              <a href="#">charitymanagement@gmail.com</a> </section>
-            <section class="col2 pad_left1">
-              <h2 class="color2"><strong>M</strong>iscellaneous<span>info</span></h2>
-              <p class="pad_bot1"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
-              Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur. </section>
-          </div>
-        </div>
-      </div>
-      <div class="wrapper">
-        <div class="pad_left2 relative">
-          <h4 class="color3"><span>Contact</span>Form</h4>
-          <img src="/static/images/contactImages/page6_img1.png" alt="" class="img1">
-          <form id="ContactForm" action="#">
-            <div>
-              <div class="wrapper"><span>Your Name:</span>
-                <input type="text" class="input">
-              </div>
-              <div class="wrapper"><span>Your E-mail:</span>
-                <input type="text" class="input">
-              </div>
-              <div class="wrapper"><span>Your Website:</span>
-                <input type="text" class="input">
-              </div>
-              <div class="textarea_box"><span>Your Message:</span>
-                <textarea name="textarea" cols="1" rows="1"></textarea>
-              </div>
-              <a href="#" class="button2 color3">Send</a></div>
-          </form>
-        </div>
-      </div>
-    </article>
-    <!-- / content -->
-    
-  </div>
+<h1 class="text-center mt-5 text-primary mb-4" style="cursor: pointer;">Contact Us</h1>
+<div style="margin-top:0px;" class="row no-margin mt-5">
+  <iframe  style="width:100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d868021.564188024!2d35.87835457114989!3d-1.1994044021860617!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi!5e0!3m2!1sen!2ske!4v1642673395465!5m2!1sen!2ske"  height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 </div>
-<script type="text/javascript">Cufon.now();</script>
+
+<div class="row contact-rooo no-margin">
+  <div class="container">
+      <div class="row">
+
+
+          <div style="padding:20px" class="col-sm-7">
+            <h2 class="text-center mt-5 text-primary" >Contact Form</h2>
+            <form id="contact-us">
+              <div class="form-group justify-content-center row">
+                <div class="col-md-4 mt-5">
+                  <label for="fname">Your Name:</label>
+                  <input class="form-control" placeholder="Alphonce" id="name" type="text">
+                </div>
+                <div class="col-md-4 mt-5">
+                  <label for="email">Email:</label>
+                  <input class="form-control" id="email" placeholder="info@charmgtgmail.com" type="email">
+                </div>
+                <div class="col-md-8">
+                  <label for="comment">Phone Number:</label>
+                  <input class="form-control" id="phone" placeholder="+254723870" type="number">
+                </div>
+                <div class="col-md-8">
+                  <label for="comment">Message:</label>
+                  <textarea class="form-control" id="comment" placeholder="Type something..." type="text" rows="4"></textarea>
+                </div>
+              </div>
+              <button id="submit" type="submit" class="btn btn-success">Submit</button>
+          </form>
+          
+    
+          </div>
+          <div class="col-sm-5">
+
+              <div style="margin:20px" class="serv mt-5 ml-5 mr-6">
+                <br>
+                  <h2 style="margin-top:10px; color: blue;">Address</h2><br>
+
+                  Ngong Road, <br>
+                  <br>
+                  23/H-2, Building<br><br>
+                  Ngong, Nairobi<br><br>
+                  Phone:+254 9159669599<br><br>
+                  Email:info@charmgtgmail.com<br><br>
+                  Website:www.charmgt.com<br><br>
+
+              </div>
+
+          </div>
+
+      </div>
+  </div>
+
+</div>
 {% endblock %}

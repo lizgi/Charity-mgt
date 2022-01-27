@@ -4,11 +4,18 @@
 <div class="container">
 
         <h2>NGO Requests</h2>
-        <div class="col-md-4">
-            <ul>
-                {% for request in requests %}
+
+        <div class="request-filter d-none d-sm-block">
+        <button class="btn btn-default filter-button" data-filter="all">All Categories</button>
+        <button class="btn btn-default filter-button" data-filter="Vulnerable_Groups">Vulnerable_Groups</button>
+        <button class="btn btn-default filter-button" data-filter="Health_Care">Health_Care</button>
+        <button class="btn btn-default filter-button" data-filter="Child_Education">Child_Education</button>
+
+          <ul>
+            {% for request in requests %}
+
                 <div class="card" style="width: 25rem;">
-                    <div class="card-body">
+                    <div class="filter {{request.category}}">
                       <h5 class="card-title">NGO Name: {{request.ngo_name}}</h5>
                       <h5 class="card-title">NGO Contact: {{request.contactNo}}</h5>
                       <h5 class="card-title">NGO Email: {{request.email}}</h5>
