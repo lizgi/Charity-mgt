@@ -14,14 +14,14 @@
           <ul>
             {% for request in requests %}
 
-                <div class="card" style="width: 25rem;">
+                <div class="card mb-5" style="width: 25rem;">
                     <div class="filter {{request.category}}">
                       <h5 class="card-title">NGO Name: {{request.ngo_name}}</h5>
                       <h5 class="card-title">NGO Contact: {{request.contactNo}}</h5>
                       <h5 class="card-title">NGO Email: {{request.email}}</h5>
                       <h6 class="card-subtitle mb-2 text-muted">Target Amount:{{request.donation_amount}}</h6>
                       <p class="card-text"><strong>Reason for donations: </strong>{{request.Reason_for_donation_request}}</p>
-                      <a href="#" class="card-link">Donate</a>
+                      <a href="{% url 'payment' %}"><button class="btn btn-success btn-sm">Donate Now</button></a>
                     </div>
                   </div>
         
