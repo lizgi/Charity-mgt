@@ -13,9 +13,9 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-from decouple import config,Csv
+# import cloudinary.uploader
+# import cloudinary.api
+# from decouple import config,Csv
 import dj_database_url
 
 
@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'authenticationApp',
-    'tkinter',
+    
     
 ]
 
@@ -101,15 +101,15 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD':config('DB_PASSWORD'),
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': config('DB_NAME'),
+#         'USER': config('DB_USER'),
+#         'PASSWORD':config('DB_PASSWORD'),
         
-    }
-}
+#     }
+# }
 
 
 # cloudinary.config(
