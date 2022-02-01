@@ -1,15 +1,11 @@
 from django.shortcuts import render, redirect
-
 from authenticationApp.decorators import donor_required, ngo_required
 from .forms import  donation_form
 from .forms import  UserUpdateForm, ProfileUpdateForm
 # from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 import stripe
-
-
 from django.shortcuts import render, redirect,HttpResponse
-
 from .forms import  donation_form,NGO_form
 from .models import *
 from . import *
@@ -45,6 +41,7 @@ def ngorequests(request):
 def blog(request):
     return render(request, 'blog.html')
 
+@ngo_required(login_url='/login')
 def profile(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
@@ -69,6 +66,33 @@ def profile(request):
         'myrequests': myrequest
     }
     return render(request, 'profile.html', context)
+
+@donor_required(login_url='/login')
+def donor_profile(request):
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST,
+                                   request.FILES,
+                                   instance=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            messages.success(request, f'Your account has been updated!')
+            return redirect('profile')
+
+    else:
+        u_form = UserUpdateForm()
+        p_form = ProfileUpdateForm()
+
+    
+    myrequest = donation_request.objects.filter(admin_approved=True)
+    context = {
+        'u_form': u_form,
+        'p_form': p_form,
+        'myrequests': myrequest
+    }
+    return render(request, 'donor_profile.html', context)
+
 
 @ngo_required(login_url='/login')
 def ngo(request):
