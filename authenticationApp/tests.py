@@ -1,8 +1,13 @@
 from django.test import TestCase
+from .models import User
 import unittest
 from models import Donors
 
 # Create your tests here.
+class UserTestClass(TestCase):
+    def setUp(self):
+        user = User.objects.create(username="test_user")
+        
 class TestDonors(unittest.TestCase):
     def setUp(self):
         self.new_user = Donors('Timothy', '9000T')
