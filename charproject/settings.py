@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'authenticationApp',
+    # 'tkinter',
     
 ]
 
@@ -103,9 +104,10 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'charmgt',
+        'NAME': 'trib',
         'USER': 'moringa',
-    'PASSWORD':'kipngeno',
+        'PASSWORD':'12345',
+        
     }
 }
 

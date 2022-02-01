@@ -27,6 +27,11 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def save_category(self): 
+        self.save()
+
+    def delete_category(self):
+         self.delete()  
 
 
 class Profile(models.Model):
@@ -104,8 +109,11 @@ class donation_request(models.Model):
 
 
     def __str__(self):
-        return self.donation_amount 
+        return self.donation_amount
 
+    def delete_donation_request(self):
+         self.delete()  
+     
 
 class CharityUser(models.Model):
     username = models.CharField(max_length = 100,primary_key = True) # Charity User_Name
@@ -114,6 +122,7 @@ class CharityUser(models.Model):
     image = models.CharField(max_length=100)  # Path of Iamge
     donors = models.IntegerField(default=0) # No of donors Donated
     amount = models.IntegerField(default=0) # Total Amount of Donation Made
+    
     def __str__(self):
         return self.name
 
