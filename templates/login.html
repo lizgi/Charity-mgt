@@ -13,13 +13,13 @@
 {% block content%}
 <div class="glass-panel">
     <br><br>
-<div class="container" style="margin:auto; color:white; width:max-content ;border-style:ridge ;box-shadow: 0 3px 10px rgb(0 0 0/1);">
+<div class="container" style="margin:auto; ; width:max-content ;border-style:ridge ;box-shadow: 0 3px 10px rgb(0 0 0/1);">
     <br>
 <form method="POST" accept-charset="utf-8">
     {% csrf_token %}
     {{form.as_p}}
 <div class="text-center">
-    <button type="submit"style="background-color:darkolivegreen" class="btn btn-sm btn mt-4">Log In</button>
+    <button type="submit" style="background-color: black; color: white; border-radius: 10px;" class="btn btn-sm btn mt-4">Log In</button>
 </div>
 </form>
 <br>
