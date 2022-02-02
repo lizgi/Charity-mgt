@@ -15,7 +15,7 @@ urlpatterns = [
     path('paymentt/', views.payment, name='paymentt'),
     path('requests/', views.ngorequests,name='ngorequests'),
     path('charge/', views.charge, name="charge"),
-
+    path('donorprofile/', views.donor_profile, name='donorprofile'),
 
    
 
