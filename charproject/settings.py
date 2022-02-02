@@ -37,14 +37,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-# if DEBUG:
-#     STRIPE_PUBLISHABLE_KEY = 'pk_test_51KMSP6KoSUQSUmrFIOOBDtlAciRFv0HLp9FiEHuOgICwA25UYnA3XFRohDDtq98PlLRbLSYjZSaUSoghHAtyqEps00LC97CniE'
-#     STRIPE_SECRET_KEY = 'sk_test_51KMSP6KoSUQSUmrFXU05yAJhdScApdG7rlQL5qUBN3FlEfhHW8da00kaLwcNoSHJk1rd4ogIkKJCAE3bKQNsgMPz00ogALGW4y'
-# # Uncomment these lines if you have a live keys
-# else:
-#     STRIPE_PUBLISHABLE_KEY = 'production_publishable_key'
-#     STRIPE_SECRET_KEY = 'production_secret_key'
-
 
 # Application definition
 
@@ -100,7 +92,14 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'king5',
+        'USER': 'access',
+    'PASSWORD':'12345',
+    }
+}
 
 
 # cloudinary.config(
@@ -141,8 +140,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 SECURE_SSL_REDIRECT = False
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/

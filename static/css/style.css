@@ -110,6 +110,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #545454;
  }
   
+ #paypal-button-container{
+   align-items: center;
+   width: 100%;
+ }
+
+
+
 
 body {
   background-color: #f1f1f145 !important;

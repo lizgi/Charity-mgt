@@ -30,6 +30,7 @@ urlpatterns = [
     path('', include('django.contrib.auth.urls')),
     path('profile/', user_views.profile, name='profile'),
 
+
 ]
 
 if settings.DEBUG:
