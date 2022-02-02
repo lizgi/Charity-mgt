@@ -6,12 +6,11 @@
                 <div class="col-lg-3 col-md-12 logo">
                     <a href="index.html">
                         
-                        <!-- <img src="/static/images/nlogo.png" alt=""> -->
+                        <img src="/static/images/logol.jpeg" alt=" ">
                         <a data-toggle="collapse" data-target="#menu" href="#menu"><i class="fas d-block d-lg-none  small-menu fa-bars"></i></a>
                     <a href="{% url 'index' %}">
                         <a data-toggle="collapse" data-target="#menu" href="/"><i class="fas d-block d-lg-none  small-menu fa-bars"></i></a>
                     </a>
-                    <h1>Charity logo</h1>
 
                 </div>
                 <div id="menu" class="col-lg-9 col-md-12 d-none d-lg-block nav-col">
@@ -42,9 +41,45 @@
                                     <a class="nav-link" href="{% url 'signUp' %}">Sign Up</a>
 
                                 </li>
+                                <!-- {% if user.is_authenticated %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{% url 'logout' %}">Log out</a>
+                                </li>
+                                {% else %}
                                 <li class="nav-item">
                                     <a class="nav-link" href="{% url 'login' %}">Login</a>
                                 </li>
+                                {% endif %} -->
+
+                                
+                                    {% if user.is_authenticated %}
+                                   
+                                   
+                                      <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account <span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+
+                                         <li>
+                                             <a href="{% url 'profile' %}">Ngo_Profile</a>
+                                         </li>
+
+                                         <li>
+                                            <a href="{% url 'donorprofile' %}">Donor_Profile</a>
+                                        </li>
+                                                            
+                                  
+                                          <li>                                           
+                                            <a href="/login">Logout</a>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                    {%else%}
+                                    <li>
+                                      <a href="/logout" class="btn btn-default">Login</a>
+                                    </li>
+                                    {%endif%}
+                                  
                             </ul>
 
 
