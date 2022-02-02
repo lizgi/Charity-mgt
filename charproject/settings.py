@@ -37,6 +37,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD':config('DB_PASSWORD'),
+        
+    }
+}
+
 
 # Application definition
 
@@ -92,17 +102,6 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'king5',
-        'USER': 'access',
-    'PASSWORD':'12345',
-
-    }
-}
-
 
 # cloudinary.config(
 #     cloud_name =config('CLOUD_NAME'),
