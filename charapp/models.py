@@ -133,3 +133,21 @@ class Donor(models.Model):
 
     def __str__(self):
         return self.username
+
+class Subscribe(models.Model):
+    first_name = models.CharField(max_length=144, null=True, blank=True)
+    last_name = models.CharField(max_length=144, null=True, blank=True)
+    contact = models.CharField(
+        unique=True, max_length=20, null=True, blank=True)
+
+
+
+class AccessToken(models.Model):
+    token = models.CharField(max_length=30)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        get_latest_by = 'created_at'
+
+    def __str__(self):
+        return self.token
