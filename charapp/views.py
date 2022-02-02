@@ -14,6 +14,12 @@ from . import *
 from datetime import date
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
+from django.http import HttpResponse, HttpResponseRedirect, Http404, JsonResponse
+from django.core.exceptions import ObjectDoesNotExist
+from charapp.mpesa import utils
+from . mpesa.core import MpesaClient
+from decouple import config
+from charapp.forms import PaymentForm
 
 stripe.api_key = 'pk_test_51KMSP6KoSUQSUmrFIOOBDtlAciRFv0HLp9FiEHuOgICwA25UYnA3XFRohDDtq98PlLRbLSYjZSaUSoghHAtyqEps00LC97CniE'
 # Create your views here.
@@ -172,4 +178,93 @@ def charge(request):
 
         return render(request, 'payment.html',{'amount':amount})
 
+def employerDash(request):
+    current_user = request.user
+    profile = Employer.objects.get(user_id=current_user.id)
+    job_seekers = User.objects.filter(is_jobseeker=True).all()
+    # potential = JobSeeker.objects.all()
+    employer = User.objects.all()
+    if request.method == 'POST':
+        mpesa_form = PaymentForm(
+            request.POST, request.FILES, instance=request.user)
+        if mpesa_form.is_valid():
+            mpesa_form.save()
+            messages.success(
+                request, 'Your Payment has been made successfully')
+            return redirect('employerDash')
+    else:
+        mpesa_form = PaymentForm(instance=request.user)
 
+    context = {
+        # "potential": potential,
+        "job_seekers": job_seekers,
+        "employer": employer,
+        'profile': profile,
+        'mpesa_form': mpesa_form
+    }
+    return render(request, 'employer.html', context)
+
+
+
+def employerPayment(request):
+    current_user = request.user
+    if request.method == 'POST':
+        mpesa_form = PaymentForm(
+            request.POST, request.FILES, instance=request.user)
+        if mpesa_form.is_valid():
+            mpesa_form.save()
+            messages.success(
+                request, 'Your Payment has been made successfully')
+            return redirect('employerDash')
+    else:
+        mpesa_form = PaymentForm(instance=request.user)
+    context = {
+        'mpesa_form': mpesa_form,
+
+    }
+    return render(request, 'paymentform.html', context)
+
+# Mpesa
+
+
+cl = MpesaClient()
+stk_push_callback_url = ''
+c2b_callback_url = ''
+
+
+def oauth_success(request):
+    r = cl.access_token()
+    return JsonResponse(r, safe=False)
+
+
+def stk_push_success(request):
+    phone_number = config('LNM_PHONE_NUMBER')
+    amount = 1
+    account_reference = 'ABC001'
+    transaction_desc = 'STK Push Description'
+    callback_url = stk_push_callback_url
+    r = cl.stk_push(phone_number, amount, account_reference,
+                    transaction_desc, callback_url)
+    return JsonResponse(r.response_description, safe=False)
+
+
+def customer_payment_success(request):
+    phone_number = config('C2B_PHONE_NUMBER')
+    amount = 1
+    transaction_desc = 'Customer Payment Description'
+    occassion = 'Test customer payment occassion'
+    callback_url = c2b_callback_url
+    r = cl.business_payment(phone_number, amount,
+                            transaction_desc, callback_url, occassion)
+    return JsonResponse(r.response_description, safe=False)
+
+
+def promotion_payment_success(request):
+    phone_number = config('C2B_PHONE_NUMBER')
+    amount = 1
+    transaction_desc = 'Promotion Payment Description'
+    occassion = 'Test promotion payment occassion'
+    callback_url = b2c_callback_url
+    r = cl.promotion_payment(phone_number, amount,
+                             transaction_desc, callback_url, occassion)
+    return JsonResponse(r.response_description, safe=False)
