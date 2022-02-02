@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+    <div class="content-section ml-5 mt-3 ">
+      <div class="media mt-4 ">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body mt-5 ml-5">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary mb-4">{{ user.email }}</p>
+        </div>
+      </div>
+      <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Profile Info</legend>
+              {{ u_form|crispy }}
+              {{ p_form|crispy }}
+              
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">Update</button>
+          </div>
+      </form>
+    </div>
+    <hr>
+    <div class="container ml-6 text-center">
+
+      <h2 class="mb-4">My Donations</h2>
+      <div class="col-md-4 ">
+          <ul>
+              {% for myrequest in myrequests %}
+              <div class="card " style="width: 65rem;">
+                  <div class="card-body">
+                    <h5 class="card-title mb-4">NGO Name: {{myrequest.ngo_name}}</h5>
+                    <h5 class="card-title mb-4">NGO Contact: {{myrequest.contactNo}}</h5>
+                    <h5 class="card-title mb-4">NGO Email: {{myrequest.email}}</h5>
+                    <h6 class="card-subtitle mb-4 text-muted">Target Amount:{{myrequest.donation_amount}}</h6>
+                    <p class="card-text mb-4"><strong>Reason for donations: </strong>{{myrequest.Reason_for_donation_request}}</p>
+                  </div>
+                </div>
+      
+              {% endfor %}
+          </ul>
+      
+
+      </div>
+  
+
+  
+</div>
+{% endblock content %}

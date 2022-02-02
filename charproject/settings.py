@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'authenticationApp',
+    # 'tkinter',
     
 ]
 
@@ -98,6 +99,7 @@ DATABASES = {
         'NAME': 'king5',
         'USER': 'access',
     'PASSWORD':'12345',
+        
     }
 }
 

@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from django.contrib.auth import login,authenticate
+from django.contrib.auth import login,authenticate,logout
 from django.contrib import messages
 from django.conf import settings
 from django.core.mail import send_mail
@@ -89,5 +89,16 @@ def login_view(request):
         return redirect('/ngo')
       elif user is not None and user.is_donor:
         login(request, user)
+<<<<<<< HEAD
         return redirect('/donation')
   return render (request, 'login.html',{'form':form})
+=======
+        return redirect('/requests')
+  return render (request, 'login.html',{'form':form})
+
+def logout(request):
+    if request.method == "POST":
+        logout(request)
+
+    return redirect('login')
+>>>>>>> 5a195b29563bf272840c96c6d96c071141c72a92
