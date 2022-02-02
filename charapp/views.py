@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from authenticationApp.decorators import donor_required, ngo_required
 from .forms import  donation_form
+from django.contrib.auth.decorators import login_required
+
 from .forms import  UserUpdateForm, ProfileUpdateForm
 # from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -37,7 +39,7 @@ def ngorequests(request):
     ngorequest = donation_request.objects.filter(admin_approved=True)
 
     return render(request, 'request_list.html', {'requests': ngorequest})
-
+@login_required(login_url='/accounts/login/')
 def blog(request):
     return render(request, 'blog.html')
 
@@ -169,3 +171,5 @@ def charge(request):
         )
 
         return render(request, 'payment.html',{'amount':amount})
+
+
