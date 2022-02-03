@@ -103,15 +103,15 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'king5',
-#         'USER': 'access',
-#     'PASSWORD':'12345',
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'king5',
+        'USER': 'access',
+    'PASSWORD':'12345',
 
-#     }
-# }
+    }
+}
 
 
 # cloudinary.config(
