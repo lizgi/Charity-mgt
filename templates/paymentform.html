@@ -1,3 +1,4 @@
+{% extends 'base.html' %}
  {% load bootstrap4 %} 
  {% block content %}
 <div class="container mt-4 ">
@@ -6,8 +7,8 @@
         <div class="col-md-10">
             <div class="format">
                 <div class="upt" id="myContent">
-                    <h2 class="text-center">Subscribe</h2>
-                    <form class="forms" action="{% url 'employerDash' %}" method="POST" enctype="multipart/form-data">
+                    <h2 class="text-center text-primary mt-2 mb-4">Subscribe</h2>
+                    <form class="forms text-center" action="{% url 'employerDash' %}" method="POST" enctype="multipart/form-data">
 
                         <fieldset class="form-group">
                             {% csrf_token %} {% load crispy_forms_tags %} {{ mpesa_form | crispy }} {% csrf_token %}
