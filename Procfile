@@ -1,1 +1,1 @@
-web: gunicorn charproject.wsgi --log-file -
+ charproject.wsgi

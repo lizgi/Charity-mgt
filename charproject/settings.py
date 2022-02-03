@@ -21,8 +21,19 @@ import cloudinary.api
 
 # development
 
+=======
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+from decouple import config,Csv
+import dj_database_url
+import django_heroku
 
+MODE=config("MODE", default="dev")
+
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -32,10 +43,24 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'django-insecure-9g-hv0%ehup=y#t-73_x#l^o@zu60kwev+(j@^o_6r^tl1v^@8'
 
 
+# # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = config('SECRET_KEY')
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD':config('DB_PASSWORD'),
+        
+    }
+}
+
 
 # Application definition
 
@@ -64,7 +89,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     
 ]
 
@@ -96,19 +121,20 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'king5',
-        'USER': 'access',
-    'PASSWORD':'12345',
-
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD':config('DB_PASSWORD'),
+        
     }
 }
 
 
 cloudinary.config(
-  cloud_name = "dfjhpskvl",
-  api_key = "236311713316395",
-  api_secret = "MTJEiQewHTQOLAJgtk1bQY4h40A",
+    cloud_name =config('CLOUD_NAME'),
+    api_key=config('CLOUD_API_KEY'), 
+    api_secret=config('API_SECRET'),
 )
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -153,6 +179,8 @@ SECURE_SSL_REDIRECT = False
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 AUTH_USER_MODEL = 'authenticationApp.User'
+
+django_heroku.settings(locals())
 
 
 

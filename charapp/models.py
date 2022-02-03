@@ -58,7 +58,7 @@ class NGO(models.Model):
     email = models.EmailField(blank=True)
     Amount = models.CharField(max_length=30,blank=True)
     Reason_for_donation= models.CharField(max_length=30,blank=True)
-    verification_status = models.NullBooleanField(default=0,blank=True,null=True)
+    verification_status = models.BooleanField(default=0,blank=True,null=True)
     ngo_current_user = models.CharField(default=0,blank=True,max_length=40)
 
 
