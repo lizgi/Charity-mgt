@@ -37,7 +37,7 @@ SECRET_KEY = 'fghjkhcvhjkjhcxcvb'
 # # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 
@@ -92,21 +92,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'charproject.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': '',
+        'NAME': 'char',
+        'USER': 'moringa',
+    'PASSWORD':'12345',
     }
 }
 

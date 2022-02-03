@@ -4,7 +4,7 @@ from email.mime import image
 from email.policy import default
 from django.conf import settings
 from django.db import models
-from pillow import Image
+from PIL import Image
 from django.conf import settings
 from django.contrib.auth.models import User
 
