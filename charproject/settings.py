@@ -10,16 +10,16 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-import os
 from pathlib import Path
+import os
+import django_heroku
+import dj_database_url
+from decouple import config,Csv
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
-from decouple import config,Csv
-import dj_database_url
-import django_heroku
 
-MODE=config("MODE", default="dev")
+# MODE=config("MODE", default="dev")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,23 +31,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'fghjkhcvhjkjhcxcvb'
 
 
 # # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD':config('DB_PASSWORD'),
-        
-    }
-}
+
 
 
 # Application definition
@@ -64,7 +56,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'bootstrap4',
     'authenticationApp',
-    'tkinter',
+    # 'tkinter',
     
 ]
 
@@ -105,23 +97,34 @@ WSGI_APPLICATION = 'charproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': config('DB_NAME'),
         'USER': config('DB_USER'),
-        'PASSWORD':config('DB_PASSWORD'),
-        
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': '',
     }
 }
 
+SECRET_KEY = config('SECRET_KEY')
+MODE=config("MODE", default="dev")
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+
+
 
 cloudinary.config(
-    cloud_name =config('CLOUD_NAME'),
-    api_key=config('CLOUD_API_KEY'), 
-    api_secret=config('API_SECRET'),
+    cloud_name='dq4bcn8d2',
+    api_key='941563347348349', 
+    api_secret='7lOtGNkeYJ_zKGF92-O1hWxcY-k',
 )
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -166,7 +169,7 @@ STATICFILES_DIRS = [
 ]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -174,7 +177,7 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'authenticationApp.User'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 
 
@@ -186,3 +189,4 @@ LOGIN_REDIRECT_URL = '/'
 
 LOGOUT_REDIRECT_URL = '/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+django_heroku.settings(locals())

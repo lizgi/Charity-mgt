@@ -85,3 +85,4 @@ venv.bak/
 /site
 # mypy
 .mypy_cache/
+.env
