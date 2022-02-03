@@ -224,7 +224,6 @@ def employerPayment(request):
     }
     return render(request, 'paymentform.html', context)
 
-# Mpesa
 
 
 cl = MpesaClient()
