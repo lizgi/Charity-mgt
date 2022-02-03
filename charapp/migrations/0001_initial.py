@@ -15,6 +15,17 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
+            name='AccessToken',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('token', models.CharField(max_length=30)),
+                ('created_at', models.DateTimeField(auto_now_add=True)),
+            ],
+            options={
+                'get_latest_by': 'created_at',
+            },
+        ),
+        migrations.CreateModel(
             name='Category',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
@@ -55,6 +66,15 @@ class Migration(migrations.Migration):
                 ('Reason_for_donation', models.CharField(blank=True, max_length=30)),
                 ('verification_status', models.BooleanField(blank=True, default=0, null=True)),
                 ('ngo_current_user', models.CharField(blank=True, default=0, max_length=40)),
+            ],
+        ),
+        migrations.CreateModel(
+            name='Subscribe',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('first_name', models.CharField(blank=True, max_length=144, null=True)),
+                ('last_name', models.CharField(blank=True, max_length=144, null=True)),
+                ('contact', models.CharField(blank=True, max_length=20, null=True, unique=True)),
             ],
         ),
         migrations.CreateModel(

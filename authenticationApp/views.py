@@ -89,7 +89,7 @@ def login_view(request):
         return redirect('/ngo')
       elif user is not None and user.is_donor:
         login(request, user)
-        return redirect('/donation')
+        return redirect('/requests')
   return render (request, 'login.html',{'form':form})
 
 def logout(request):

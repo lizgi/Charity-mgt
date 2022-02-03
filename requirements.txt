@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 57e8d7b2bb56916ccb181d6f3d32508ae3950bb2
 amqp==1.4.9
 anyjson==0.3.3
 asgiref==3.4.1
@@ -29,6 +33,17 @@ pycodestyle==2.8.0
 pycparser==2.21
 PyJWT==2.3.0
 pyOpenSSL==19.0.0
+<<<<<<< HEAD
+=======
+asgiref==3.5.0
+certifi==2021.10.8
+cffi==1.15.0
+charset-normalizer==2.0.10
+cloudinary==1.28.1
+cryptography==36.0.1
+dj-database-url==0.5.0
+
+>>>>>>> 57e8d7b2bb56916ccb181d6f3d32508ae3950bb2
 python-decouple==3.5
 python3-openid==3.2.0
 pytz==2021.3
@@ -44,3 +59,13 @@ toml==0.10.2
 urllib3==1.26.7
 Werkzeug==0.16.0
 whitenoise==5.3.0
+<<<<<<< HEAD
+=======
+six==1.16.0
+soupsieve==2.3.1
+sqlparse==0.4.2
+stripe==2.65.0
+urllib3==1.26.8
+whitenoise==5.3.0
+ 
+>>>>>>> 57e8d7b2bb56916ccb181d6f3d32508ae3950bb2
