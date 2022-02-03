@@ -16,9 +16,8 @@ urlpatterns = [
     path('requests/', views.ngorequests,name='ngorequests'),
     path('charge/', views.charge, name="charge"),
     path('donorprofile/', views.donor_profile, name='donorprofile'),
-    path('employer/', views.employerPayment, name='employerDash'),
-    path('daraja/', views.stk_push_success,)
-
+  
+   
 
     
 
