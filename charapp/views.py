@@ -45,7 +45,7 @@ def ngorequests(request):
     ngorequest = donation_request.objects.filter(admin_approved=True)
 
     return render(request, 'request_list.html', {'requests': ngorequest})
-@login_required(login_url='/accounts/login/')
+
 def blog(request):
     return render(request, 'blog.html')
 

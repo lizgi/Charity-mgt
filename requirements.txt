@@ -40,7 +40,6 @@ social-auth-core==4.1.0
 soupsieve==2.3.1
 sqlparse==0.4.2
 stripe==2.65.0
-tk==0.1.0
 toml==0.10.2
 urllib3==1.26.7
 Werkzeug==0.16.0

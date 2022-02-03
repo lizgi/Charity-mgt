@@ -1,7 +1,6 @@
 <footer class="footer">
     <div class="container">
-        <div class="row">
-            
+        <div class="row" id="foot">
             <div class="col-md-4 col-sm-12">
                 <h2>Useful Links</h2>
                 <ul class="list-unstyled link-list">
@@ -18,32 +17,35 @@
                     Management<br>
                     Phone: +254 707590432<br>
                     Email: <a href="mailto:charmgt@gmail.com" class="">info@charmgt@gmail.com</a><br>
-                    
                 </address>
-            </div>    
-                
-              
-
-            
+            </div>
         <!-- <div class="nav-box row clearfix"> -->
-            
-              <div class="donate-link col-md-3"><a href="{% url 'payment' %}" class="btn btn-primary "><span class="btn-title">Donate Now</span></a></div>
+              <div class="donate-link col-md-3"><a href="{% url 'payment' %}" class="btn btn-light "><span class="btn-title">Donate Now</span></a></div>
         </div>
-        
     </div>
-    
 
-</footer>
 <div class="copy">
         <div class="container">
             <a href="#">2022 &copy; All Rights Reserved </a>
-            
             <span>
             <a><i class="fab fa-github"></i></a>
             <a><i class="fab fa-google-plus-g"></i></a>
             <a><i class="fab fa-pinterest-p"></i></a>
             <a><i class="fab fa-twitter"></i></a>
             <a><i class="fab fa-facebook-f"></i></a>
-            
+
+            <style>
+                .footer{
+                    padding-top: -10%;
+                    background-color: #299B29;
+                }
+                
+                .copy{
+                 background-color: #299B29;
+                 padding-top:-20%;
+                }
+            </style>
     </span>
         </div>
+        
+</footer>

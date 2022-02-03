@@ -13,21 +13,20 @@
 {{block.super}}
 <link rel="stylesheet" href="{% static 'css/signup.css' %}">
 {% endblock %}
-
 {% block content %}
 <div class="glass-panel1">
     <div class="container-fluid">
       <div style="margin: auto;">
       <div style="margin: 7em;">
         <div class="row">
-            <div class="col-sm-2"> 
+            <div class="col-sm-2">
             <div class="col-sm-8">
                 <div class="card signup">
                     <div class="card-body">
                         <h5 class="card-title">Welcome to the charity service</h5>
                         <h6 class="card-subtitle mb-2 ">Sign Up for an Account</h6>
-                        <a class="btn btn-primary signup-btn" id="customer-btn" href="{%url 'customer_signup'%}" role="button">Donors Sign Up</a>
-                        <a class="btn btn-outline-primary  signup-btn" id="author-btn" href="{%url 'author_signup'%}" role="button">NGO Sign Up</a>
+                        <a class="btn btn-success signup-btn" id="customer-btn" href="{%url 'customer_signup'%}" role="button">Donors Sign Up</a>
+                        <a class="btn btn-success  signup-btn" id="author-btn" href="{%url 'author_signup'%}" role="button">NGO Sign Up</a>
                     </div>
                 </div>
             </div>
@@ -42,8 +41,8 @@
     .container-fluid{
                 border-radius: 15px;
                 margin: 5em auto;
-                margin-top: 5em;
-                padding: 2em;
+                margin-top: .2em;
+                padding: .2em;
             }
             .glass-panel {
       color: #fff;
@@ -56,7 +55,6 @@
       padding: 32px;
       backdrop-filter: blur(10px);
     }
-    
     .glass-button {
       display: inline-block;
       padding: 24px 32px;
@@ -72,15 +70,13 @@
       cursor: pointer;
       text-transform: uppercase;
     }
-    
     .glass-button:hover {
-      background-color: rgba(255,255,255,0.2);
+      background-color: rgba(10, 105, 6, 0.2);
     }
-    
     /* Extra styles for demo */
     /* Article:  https://superdevresources.com/glassmorphism-ui-css/ */
     body {
-      background: url(https://media.istockphoto.com/photos/african-american-cute-girl-is-holding-school-books-an-pointing-on-a-picture-id1288884053?b=1&k=20&m=1288884053&s=170667a&w=0&h=QxxeIRts0F0qxLsZNQdGacdsWeZ_RCrSJdHNni9VMUo=) no-repeat center center fixed;
+      background: url(https://media.istockphoto.com/photos/blank-glass-plate-with-copy-space-picture-id133468496?b=1&k=20&m=133468496&s=170667a&w=0&h=zBmcLp3bvd2ra0T7hgPIZwnNfFv6HwHbXSYC7J-qXvY=) no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -88,16 +84,14 @@
       text-align: center;
       font-family: 'Open Sans', sans-serif;
     }
-    
-    .glass-panel {  
+    .glass-panel {
       max-width: 600px;
     }
-    
     .glass-button {
+
       margin: 15px;
       margin-top: 40px;
     }
-    
     h1, h1 a {
       min-height: 120px;
       width: 90%;
@@ -110,14 +104,12 @@
       padding-top: 60px;
       color: rgba(255,255,255,0.8);
     }
-    
     p {
       width: 80%;
       margin: 0 auto;
       padding-bottom: 32px;
       color: rgba(255,255,255,0.6);
     }
-    
     </style>
 {% endblock content %}
 </body>

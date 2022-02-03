@@ -19,16 +19,16 @@
     {% csrf_token %}
     {{form.as_p}}
 <div class="text-center">
-    <button type="submit" style="background-color: black; color: white; border-radius: 10px;" class="btn btn-sm btn mt-4">Log In</button>
+    <button type="submit" style="background-color: #299B29; color: white; border-radius: 10px;" class="btn btn-sm btn mt-4">Log In</button>
 </div>
 </form>
 <br>
 <div class="text-center">
-    <span style="color: blue;">Don't have an account?</span> 
-<a class="nav-link"  style="font-size: x-large; color: blue;" href="{% url 'author_signup'%}" ><small>NGO Register <span style="color: darkblue;  border-radius: 4px; letter-spacing: 1px">Here</span></small></i></a>
+    <span style="color: #299B29;">Don't have an account?</span> 
+<a class="nav-link"  style="font-size: x-large; color: #299B29;" href="{% url 'author_signup'%}" ><small>NGO Register <span style="color: rgb(17, 68, 10);  border-radius: 4px; letter-spacing: 1px">Here</span></small></i></a>
 </div>
 <div class="text-center">
-<a class="nav-link" style="font-size: large; color: blue;"  href="{% url 'customer_signup'%}" >Donor Register <span style="color: darkblue;   border-radius: 4px; letter-spacing: 2px; font-size: 20px;">Here</span></i></a>
+<a class="nav-link" style="font-size: large; color: #299B29;"  href="{% url 'customer_signup'%}" >Donor Register <span style="color: rgb(17, 68, 10);   border-radius: 4px; letter-spacing: 2px; font-size: 20px;">Here</span></i></a>
 </div>
 <br>
 </div>
