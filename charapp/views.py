@@ -182,7 +182,6 @@ def employerDash(request):
     current_user = request.user
     profile = Employer.objects.get(user_id=current_user.id)
     job_seekers = User.objects.filter(is_jobseeker=True).all()
-    # potential = JobSeeker.objects.all()
     employer = User.objects.all()
     if request.method == 'POST':
         mpesa_form = PaymentForm(
@@ -197,8 +196,6 @@ def employerDash(request):
 
     context = {
         # "potential": potential,
-        "job_seekers": job_seekers,
-        "employer": employer,
         'profile': profile,
         'mpesa_form': mpesa_form
     }
