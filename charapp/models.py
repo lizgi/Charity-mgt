@@ -5,6 +5,7 @@ from email.policy import default
 from django.conf import settings
 from django.db import models
 from PIL import Image
+from cloudinary.models import CloudinaryField
 from django.conf import settings
 from django.contrib.auth.models import User
 
@@ -36,7 +37,7 @@ class Category(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    image = models.ImageField(default=0, upload_to='profile_pics')
+    image = CloudinaryField('image')
 
     def __str__(self):
         return f'{self.user.username} Profile'
@@ -44,12 +45,12 @@ class Profile(models.Model):
     def save(self):
         super().save()
 
-        img = Image.open(self.image.path)
+        
 
         if img.height > 300 or img.width > 300:
             output_size = (300, 300)
             img.thumbnail(output_size)
-            img.save(self.image.path)
+            
 
 class NGO(models.Model):
     ngo_name = models.CharField(max_length=30,blank=True)
@@ -119,7 +120,7 @@ class CharityUser(models.Model):
     username = models.CharField(max_length = 100,primary_key = True) # Charity User_Name
     name = models.CharField(max_length = 100) # Charity Name
     description = models.TextField() # Short Description about Charity
-    image = models.CharField(max_length=100)  # Path of Iamge
+    image = CloudinaryField('image')  # Path of Iamge
     donors = models.IntegerField(default=0) # No of donors Donated
     amount = models.IntegerField(default=0) # Total Amount of Donation Made
     
