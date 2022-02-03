@@ -15,35 +15,12 @@ from pathlib import Path
 import django_heroku
 import dj_database_url
 from decouple import config,Csv
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
-MODE=config("MODE", default="dev")
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
 # development
-if config('MODE')=="dev":
-   DATABASES = {
-       'default': {
-           'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('DB_NAME'),
-           'USER': config('DB_USER'),
-           'PASSWORD': config('DB_PASSWORD'),
-           'HOST': config('DB_HOST'),
-           'PORT': '',
-       }
-       
-   }
-# production
-else:
-   DATABASES = {
-       'default': dj_database_url.config(
-           default=config('DATABASE_URL')
-       )
-   }
 
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -52,7 +29,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY ='y2-9a(un!=tk07ha$+^q-0b$!tc-=&wzhpms7x2x4nk#6n#6uw'
+SECRET_KEY = 'django-insecure-9g-hv0%ehup=y#t-73_x#l^o@zu60kwev+(j@^o_6r^tl1v^@8'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -126,12 +104,11 @@ DATABASES = {
 }
 
 
-# cloudinary.config(
-#     cloud_name =config('CLOUD_NAME'),
-#     api_key=config('CLOUD_API_KEY'), 
-#     api_secret=config('API_SECRET'),
-# )
-
+cloudinary.config(
+  cloud_name = "dfjhpskvl",
+  api_key = "236311713316395",
+  api_secret = "MTJEiQewHTQOLAJgtk1bQY4h40A",
+)
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -156,7 +133,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Africa/Nairobi'
 
 USE_I18N = True
 
@@ -190,7 +167,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 
 
-STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
