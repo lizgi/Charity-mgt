@@ -4,7 +4,6 @@ from email.mime import image
 from email.policy import default
 from django.conf import settings
 from django.db import models
-from PIL import Image
 from cloudinary.models import CloudinaryField
 from django.conf import settings
 from django.contrib.auth.models import User
