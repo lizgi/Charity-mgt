@@ -747,7 +747,7 @@ header {
 
   
 .link button{
-  background-color: blue;
+  /* background-color:g; */
   border-radius: 23px;
 }
 .our-blog .single-blog .link i {
@@ -757,7 +757,7 @@ header {
 /* ===================================== Fooer CSS ================================== */
 .footer {
   padding: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   background-color: #1e2436;
   color: #FFF; }
 
@@ -801,7 +801,7 @@ header {
   font-family: "mouse-300", Arial, Helvetica, sans-serif; }
 
 .copy {
-  padding: 20px;
+  padding: 10px;
   background: #1a202f;
   color: #FFF; }
 

@@ -5,7 +5,7 @@ from .views import Index
 
 urlpatterns = [
     path('', Index, name='index'),
-    path('donation/', views.donation),
+    path('donation/', views.donation, name='donation'),
     path('blog/', views.blog, name='blog'),
     path('ngo/', views.ngo),
     path('gallery/', views.gallery, name='gallery'),
@@ -16,9 +16,8 @@ urlpatterns = [
     path('requests/', views.ngorequests,name='ngorequests'),
     path('charge/', views.charge, name="charge"),
     path('donorprofile/', views.donor_profile, name='donorprofile'),
-    path('employer/', views.employerPayment, name='employerDash'),
-    path('daraja/', views.stk_push_success,)
-
+  
+   
 
     
 

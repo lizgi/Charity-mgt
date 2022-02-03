@@ -1,10 +1,5 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
-
-  
-                 
   <!-- ******************** Slider Starts Here ******************* -->
     <div class="slider">
         <!-- Set up your HTML -->
@@ -18,7 +13,6 @@
                                 <div class="animated bounceInDown slider-captions">
                                     <h4 class="slider-title">Charity is happiness.</h4>
                                     <p class="slider-text hidden-xs">A great deal of good is charity you are doing good,.</p>
-                                    
                                 </div>
                             </div>
                         </div>
@@ -33,7 +27,6 @@
                             <div class="slider-captions ">
                                 <h1 class="slider-title">It's time for better help.</h1>
                                 <p class="slider-text hidden-xs">Share your Joy With charity,Share your kindness ,yes! good days are ahead</p>
-                                
                             </div>
                         </div>
                     </div>
@@ -47,24 +40,20 @@
                             <div class="slider-captions ">
                                 <h1 class="slider-title">Show you care through Share</h1>
                                 <p class="slider-text hidden-xs">-Even the smallest contributions count.Help the society, donate to the charity.</p>
-                               
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>                 
-                  
- <!--  ************************* About Us Starts Here ************************** -->    
+    </div>
+ <!--  ************************* About Us Starts Here ************************** -->
  <section class="our_activity">
      <div class="session-title row">
-        <h2>OUR ACTIVITY</h2>
-        <p>As Online charititables we involve oursel in activities like:virtual awareness campaigns, <br>social media awareness and mass education to the masses. </p>
-
+        <h2 style="color: #299B29;">WHO WE ARE</h2>
+        <p>Online Charitables we are a link to bridge the donors and Ngo's.<br>In this pandemic times this 
+     Ngo's have been really affected by the lack of funds.<br>The donors too have very little to sparse<br>Our approach is to allow even that little contribution to be made<br>hence the Ngo's to remain afloat. </p>
      </div>
-    
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-xs-12">
@@ -96,8 +85,7 @@
             </div>
         </div>
     </div>
-</section> 
-
+</section>
 <section class="donors">
     <div class="container">
         <div class="row">
@@ -106,8 +94,6 @@
                     <h2>MAKE DONATION</h2>
                     <form action="{% url 'payment' %}" method="post">
                         {% csrf_token %}
-                        
-                       
                         <h5>
                             <input type="text" placeholder="Name/Organization">
                             <input type="email" placeholder="Email">
@@ -152,21 +138,19 @@
         </div>
     </div>
 </section>
-    
      <!-- ################# Events Start Here#######################--->
     <section class="events">
         <div class="container">
             <div class="session-title row">
-                <h2>Popular Causes</h2>
-                <p>We are a non-profital & Charity raising money for child education,elevating the needs of the lowly in the society and giving hope to all those suffering.</p> 
+                <h2 style="color: #299B29;">Popular Causes</h2>
+                <p>We are a non-profital & Charity raising money for child education,elevating the needs of the lowly in the society and giving hope to all those suffering.</p>
             </div>
             <div class="event-ro row">
                 <div class="col-md-4 col-sm-6">
                     <div class="event-box">
                         <img src="/static/images/class.jpg" alt="">
-                        <h4>Child Education in Africa</h4>
-                        
-                        <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
+                        <h4 style="color: #299B29;">Child Education in Africa</h4>
+                        <p class="raises"><span>Raised : $7,425</span> / $500,000 </p>
                         <p class="desic">Children in Africa get a better chance to being better people in the society and industry at large.</p>
                         <a href="{% url 'payment' %}"><button class="btn btn-success btn-sm">Donate Now</button></a>
                     </div>
@@ -174,8 +158,8 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="event-box">
                         <img src="/static/images/hosi.jpg" alt="">
-                        <h4>Better Access to Health Care</h4>
-                        <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
+                        <h4 style="color: #299B29;">Better Access to Health Care</h4>
+                        <p class="raises"><span>Raised : $4,425</span> / $500,000 </p>
                         <p class="desic">People around the globe are able to get proper medical care from the funding raised from the donors.</p>
                         <a href="{% url 'payment' %}"><button class="btn btn-success btn-sm">Donate Now</button></a>
                     </div>
@@ -183,22 +167,16 @@
                 <div class="col-md-4 col-sm-6">
                     <div class="event-box">
                         <img src="/static/images/need.jpeg" alt="">
-                        <h4>The vulnerable Groups in society</h4>
-                        <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
+                        <h4  style="color: #299B29;">The vulnerable Groups in society</h4>
+                        <p class="raises"><span>Raised : $3,425</span> / $500,000 </p>
                         <p class="desic">Third world countries are at a better standing as they can get funds to support the different affected group i.e; widows,orphans,poor and many more.</p>
                         <a href="{% url 'payment' %}"><button class="btn btn-success btn-sm">Donate Now</button></a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>   
-    
-
-   
-   
+    </section>
     <!-- ################# Charity Number Starts Here#######################--->
-
-
     <div class="doctor-message">
         <div class="inner-lay">
             <div class="container">
@@ -226,16 +204,8 @@ Our donors funds have been put to good use,,;See the below statics</p>
                     </div>
                 </div>
             </div>
-
         </div>
-
-    </div> 
-         
+    </div>
     <!--################### Our Team Starts Here #######################--->
-     
     <!-- ################# Our Blog Starts Here#######################--->
-
-          
-    
-
 {% endblock %}

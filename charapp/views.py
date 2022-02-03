@@ -20,8 +20,12 @@ from charapp.mpesa import utils
 from . mpesa.core import MpesaClient
 from decouple import config
 from charapp.forms import PaymentForm
+from datetime import datetime
+import base64
+import requests
+import json
 
-stripe.api_key = 'pk_test_51KMSP6KoSUQSUmrFIOOBDtlAciRFv0HLp9FiEHuOgICwA25UYnA3XFRohDDtq98PlLRbLSYjZSaUSoghHAtyqEps00LC97CniE'
+
 # Create your views here.
 def Index(request):
     return render(request,'index.html')
@@ -178,93 +182,68 @@ def charge(request):
 
         return render(request, 'payment.html',{'amount':amount})
 
-def employerDash(request):
-    current_user = request.user
-    profile = Employer.objects.get(user_id=current_user.id)
-    job_seekers = User.objects.filter(is_jobseeker=True).all()
-    # potential = JobSeeker.objects.all()
-    employer = User.objects.all()
-    if request.method == 'POST':
-        mpesa_form = PaymentForm(
-            request.POST, request.FILES, instance=request.user)
-        if mpesa_form.is_valid():
-            mpesa_form.save()
-            messages.success(
-                request, 'Your Payment has been made successfully')
-            return redirect('employerDash')
-    else:
-        mpesa_form = PaymentForm(instance=request.user)
 
-    context = {
-        # "potential": potential,
-        "job_seekers": job_seekers,
-        "employer": employer,
-        'profile': profile,
-        'mpesa_form': mpesa_form
-    }
-    return render(request, 'employer.html', context)
-
-
-
-def employerPayment(request):
-    current_user = request.user
-    if request.method == 'POST':
-        mpesa_form = PaymentForm(
-            request.POST, request.FILES, instance=request.user)
-        if mpesa_form.is_valid():
-            mpesa_form.save()
-            messages.success(
-                request, 'Your Payment has been made successfully')
-            return redirect('employerDash')
-    else:
-        mpesa_form = PaymentForm(instance=request.user)
-    context = {
-        'mpesa_form': mpesa_form,
-
-    }
-    return render(request, 'paymentform.html', context)
-
-# Mpesa
-
-
-cl = MpesaClient()
-stk_push_callback_url = ''
-c2b_callback_url = ''
-
-
-def oauth_success(request):
-    r = cl.access_token()
-    return JsonResponse(r, safe=False)
-
-
-def stk_push_success(request):
-    phone_number = config('LNM_PHONE_NUMBER')
-    amount = 1
-    account_reference = 'ABC001'
-    transaction_desc = 'STK Push Description'
-    callback_url = stk_push_callback_url
-    r = cl.stk_push(phone_number, amount, account_reference,
-                    transaction_desc, callback_url)
-    return JsonResponse(r.response_description, safe=False)
-
-
-def customer_payment_success(request):
-    phone_number = config('C2B_PHONE_NUMBER')
-    amount = 1
-    transaction_desc = 'Customer Payment Description'
-    occassion = 'Test customer payment occassion'
-    callback_url = c2b_callback_url
-    r = cl.business_payment(phone_number, amount,
-                            transaction_desc, callback_url, occassion)
-    return JsonResponse(r.response_description, safe=False)
-
-
-def promotion_payment_success(request):
-    phone_number = config('C2B_PHONE_NUMBER')
-    amount = 1
-    transaction_desc = 'Promotion Payment Description'
-    occassion = 'Test promotion payment occassion'
-    callback_url = b2c_callback_url
-    r = cl.promotion_payment(phone_number, amount,
-                             transaction_desc, callback_url, occassion)
-    return JsonResponse(r.response_description, safe=False)
+# m={
+#     "paybill":"174379",
+#     "passKey":"bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919",
+#     "consumer_key":"mVCZ6HueP2soLBtsAG8GWyfF7R1D1ATm",
+#     "consumer_secret":"xoEeo8whgW2fiYBN",
+#     "BusinessShortCode": 174379,
+#     "TransactionType": "CustomerPayBillOnline",
+#     "PartyB": 174379,
+#      "CallBackURL": "https://mydomain.com/path",
+#     "AccountReference": "CompanyXLTD",
+#     "TransactionDesc": "Payment of X"
+# }
+# def express_payload(amount,phone,passkey,time):
+#     return {
+#          "BusinessShortCode": 600978,
+#          "Password":passkey,
+#          "Timestamp":time,
+#          "TransactionType": "CustomerPayBillOnline",
+#           "Amount": amount,
+#           "PartyA": phone,
+#           "PartyB": 600978,
+#           "PhoneNumber": phone,
+#            "CallBackURL": "https://mydomain.com/path",
+#          "AccountReference": "CompanyXLTD",
+#         "TransactionDesc": "Payment of X"
+#     }
+# ## Function Below generates the mpesa password and time format.
+# def mpesa_time_pass():
+#     t=mpesa_time_stamp()
+#     s=str(m["paybill"]+m["passKey"]+t).encode("ascii")
+#     en=base64.b64encode(s)
+#     print(en)
+#     return {"time":str(t),"password":en.decode("ascii")}
+# def mpesa_pass_key(timestamp):
+#     en=str(str(m["BusinessShortCode"])+m["passKey"]+timestamp).encode("ascii")
+#     return base64.b64encode(en).decode("ascii")
+# def mpesa_time_stamp():
+#    d=datetime.now()
+#    x=d.strftime("%Y%m%d%H%M%S")
+#    return x
+# def mpesa_express(amount=1,phone=254725089717):
+#     time=mpesa_time_stamp()
+#     token=mpesa_token()
+#     payload=express_payload(amount,phone,mpesa_pass_key(time),time)
+#     print(payload)
+#     url='https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
+#     res=requests.post(url,headers={"Authorization":f"Bearer {token}"},data=payload)
+#     print(res.text)
+# #Function to generate mpesa token
+# def mpesa_token():
+#     s=str(m["consumer_key"]+":"+m["consumer_secret"]).encode("ascii")
+#     mpesaKey=base64.b64encode(s)
+#     #print(mpesaKey)
+#     #print(mpesaKey.decode("ascii"))
+#     newkey=mpesaKey.decode("ascii")
+#     url="https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials"
+#     res=requests.get(url,headers={"Authorization":f"Basic {newkey}"})
+#     k=json.loads(res.text)
+#     return k["access_token"]
+# # mpesa_time_pass()
+# #print(mpesa_time_pass())
+# #print(mpesa_token())
+# mpesa_express()
+# #print(mpesa_pass_key("34324234"))
