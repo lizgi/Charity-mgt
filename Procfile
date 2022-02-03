@@ -1,1 +1,1 @@
-web: gunicorn charproject.wsgi
+ charproject.wsgi

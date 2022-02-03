@@ -5,7 +5,7 @@ from .views import Index
 
 urlpatterns = [
     path('', Index, name='index'),
-    path('donation/', views.donation),
+    path('donation/', views.donation, name='donation'),
     path('blog/', views.blog, name='blog'),
     path('ngo/', views.ngo),
     path('gallery/', views.gallery, name='gallery'),
