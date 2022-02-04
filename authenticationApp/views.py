@@ -86,7 +86,7 @@ def login_view(request):
       user = authenticate(username=username,password=password)
       if user is not None and user.is_ngo:
         login(request, user)
-        return redirect('/ngo')
+        return redirect('/donation')
       elif user is not None and user.is_donor:
         login(request, user)
         return redirect('/requests')
