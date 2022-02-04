@@ -35,7 +35,7 @@ HTML
 
 ## INSTALLATION AND SET UP
 
-Git clone the repository at git@github.com:Timoh97/BOOKSTORE.git
+Git clone the repository at git@github.com:lizgi/Charity-mgt.git
 
 
 #### CREATION AND ACTIVATION OF VIRTUAL ENVIRONMENT
