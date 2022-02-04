@@ -90,7 +90,7 @@ def donor_profile(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Your account has been updated!')
-            return redirect('profile')
+            return redirect('index')
 
     else:
         u_form = UserUpdateForm()
